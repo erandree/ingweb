@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicio Social Universitario</title>
+  <link rel="stylesheet" href="header.css">
+
+
+</head>
+<body>
+<section id="contenido_de_header">
+
+    <a id="menu_burger" href="#" onclick="openNav()">
+        <img src="https://icongr.am/fontawesome/bars.svg?size=25&color=ffffff" alt="menu_burger">
+    </a>
+
+    <a class="inicio" href="menu.html">
+        <img src="https://i.imgur.com/bYacHHK.png" alt="logo" id="logo">
+        <span id="titulo">Ukianime</span>
+    </a> 
+
+    <div class="busqueda">
+        <img src="https://icongr.am/clarity/search.svg?color=ffffff&size=15px" alt="lupa" class="lupa">
+        <input type="search" placeholder="Buscar..." class="search1" id="input_busqueda">
+    </div>
+
+    <h4 id="mi_lista">Mi lista +</h4> 
+
+    <a href="cuenta.html" id="link_perfil">
+        <img src="https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" id="icono_perfil">
+    </a>
+</section>
+</body>
+</html>

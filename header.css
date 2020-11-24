@@ -4,6 +4,12 @@
 
 /* Navegador principal */
 
+*{
+  margin: 0%;
+  padding: 0%;
+}
+
+
 #contenido_de_header {
   white-space: nowrap;
   display: flex;
@@ -11,7 +17,7 @@
   align-items: center;
   background-color: #343131;
   color: #b4b4ba;
-  height: 75px;
+  height: 125px;
 }
 
 #logo {
