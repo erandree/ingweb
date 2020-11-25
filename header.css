@@ -50,7 +50,7 @@ a {
 #inicio {
 flex-basis: 6%;
 }
-#mensajes {
+#a.mensajes {
   flex-basis: 10%;
 }
 
