@@ -63,10 +63,12 @@ flex-basis: 10%;
 }
 #mensajes1 {
   flex-basis: 40%;
+  float: left;
 }
 
 #mensajes2 {
   flex-basis: 40%;
+  
 }
 
 #link_perfil {
