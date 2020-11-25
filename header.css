@@ -59,10 +59,14 @@ a {
 /* Posicionamiento */
 
 #inicio {
-flex-basis: 20%;
+flex-basis: 10%;
 }
-#mensajes {
-  flex-basis: 35%;
+#mensajes1 {
+  flex-basis: 40%;
+}
+
+#mensajes2 {
+  flex-basis: 40%;
 }
 
 #link_perfil {
