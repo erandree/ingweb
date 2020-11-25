@@ -19,6 +19,25 @@
 </head>
 <body>
 <header id="header"></header>
+
+<a href="registro.php">
+resgitro de propuesta
+</a>
+<br>
+
+<a href="administracion.php">
+administracion de propuestas
+</a>
+
+<br>
+
+<!--motivo agregar-->
+<a href="listado.php">
+Listado de propuestas
+</a>
+
+<!--Detalles de cada una-->
+
 <footer id="footer"></footer>
 </body>
 </html>
