@@ -50,9 +50,7 @@ a {
 #inicio {
 flex-basis: 6%;
 }
-a.inicio {
-  flex-basis: 30%;
-}
+
 div.busqueda {
   flex-basis: 48%;
 }
