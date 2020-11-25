@@ -50,6 +50,9 @@ a {
 #inicio {
 flex-basis: 6%;
 }
+#mensajes {
+  flex-basis: 10%;
+}
 
 div.busqueda {
   flex-basis: 48%;
