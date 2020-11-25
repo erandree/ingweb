@@ -20,6 +20,16 @@
   height: 125px;
 }
 
+#contenido_de_header2 {
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ffffff;
+  color: #580054;
+  height: 20px;
+}
+
 #logo {
   height: 125px;
 }
