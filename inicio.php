@@ -9,10 +9,10 @@
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script>
         $(function(){
-            $("#header").load("https://raw.githubusercontent.com/erandree/ingweb/master/header.html"); 
+            $("#header").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/header.html"); 
         });
         $(function(){
-            $("#footer").load("https://raw.githubusercontent.com/erandree/ingweb/master/footer.html"); 
+            $("#footer").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/footer.html"); 
         });
 </script>
 
