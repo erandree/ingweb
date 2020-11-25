@@ -62,11 +62,11 @@ a {
 flex-basis: 20%;
 }
 #mensajes {
-  flex-basis: 60%;
+  flex-basis: 35%;
 }
 
 #link_perfil {
-  flex-basis: 20%;
+  flex-basis: 10%;
 }
 
 /* Barra de búsqueda */
