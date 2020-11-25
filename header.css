@@ -48,20 +48,14 @@ a {
 /* Posicionamiento */
 
 #inicio {
-flex-basis: 6%;
+flex-basis: 20%;
 }
 #mensajes {
-  flex-basis: 20%;
+  flex-basis: 60%;
 }
 
-div.busqueda {
-  flex-basis: 48%;
-}
-#mi_lista {
-  flex-basis: 8%;
-}
 #link_perfil {
-  flex-basis: 8%;
+  flex-basis: 20%;
 }
 
 /* Barra de búsqueda */
