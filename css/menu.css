@@ -11,7 +11,7 @@
 .carousel-cell {
   display: flex;
   margin-right: 10px;
-  background: #006977;
+  background: #838a5f;
   padding: 15px;
   border-radius: 5px;
   counter-increment: carousel-cell;

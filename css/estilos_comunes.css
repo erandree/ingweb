@@ -12,8 +12,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-h1, h2, h3, h4, h5 {
-}
 
 a {
     text-decoration: none;
@@ -38,7 +36,7 @@ body {
 }
 
 .fondo-uki {
-    background-color: #d1d1d1;
+    background-color: #c2c2c2;
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;

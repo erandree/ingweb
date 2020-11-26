@@ -1,15 +1,25 @@
 /* ----- Footer ----- */
 
 #contenido_del_footer{
-  background-color:#343131;
+  background-color:#580054;
   color: #b4b4ba;
   width: auto;
   text-align: center;
   padding-bottom: 30px;
 }
 
+#barra{
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #580054;
+  color: #ffffff;
+  height: 20px;
+}
+
 a {
-  color: #b4b4ba;
+  color: #bab4b7;
   text-decoration: none;
 }
 
