@@ -17,7 +17,7 @@
         <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="menu-carrusel.js"></script>
+        <script src="js/menu-carrusel.js"></script>
 
         <!--Carga componentes-->
         <script>
@@ -30,6 +30,28 @@
 
         </script>
 
+    <?php
+
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $db = "ssu";
+        //Crear Conexion con MYSQL
+        $conn = new mysqli($servername, $username, $password, $db);
+        //Comprobar la Conexión
+        if ($conn->connect_error) {
+            die("Fallo de Conexión: " . $conn->connect_error);
+        } 
+
+        $tablafunciones = "SELECT * FROM funciones"; 
+        $resultado1 = $conn->query($tablafunciones);
+
+        $categorias = "SELECT DISTINCT categoria FROM funciones";
+        $resultado2 = $conn->query($categorias);
+    ?>
+
+
+
     </head>
 <body class="fondo-uki">
 
@@ -37,158 +59,53 @@
 
     <section class="seccion_central">
 
-        <div class="menu_contenedores">
-            <h1>Proyectos</h1>
-            <section class="carousel" data-flickity='{ "wrapAround": true, "pageDots": false}'>
-                <div class="carousel-cell">
-                    <div class="cada_anime">
-                        <img class="menu_imagen" src="https://i.pinimg.com/originals/e5/b4/96/e5b496b1780283ba9ee1fb98c6933b5c.jpg" alt="menu_imagen1">
-                        <br>
-                        <b>Neon Genesis Evangelion</b>
-                    </div>
+        
+        <?php
+            if($resultado2->num_rows > 0)
+            {
+                while($row = $resultado2->fetch_assoc())
+                {
+                    ?>
+                    <div class="menu_contenedores">
+                        <h1 class="titulo_categoria"> <?php echo $row['categoria'];?> </h1> 
+                        <div class="carousel-bg">
+                            <section class="carousel" data-flickity='{ "wrapAround": false, "pageDots": false}'>
+                    <?php
+                    while($row2 = $resultado1->fetch_assoc())
+                    {
+                        if($row['categoria'] == $row2['categoria'])
+                        {
+                            ?>
+                            <a href="<?php echo $row2['direccion']?>">
+                                <div class="carosel-cell cada_anime">
+                                        <img class="menu_imagen" src="<?php echo $row2['imagen'] ?>" alt="menu_imagen1">
+                                        <b><?php echo $row2['nombre'] ?></b>
+                                </div>
+                            </a>
+                        
+                        <?php
 
-                    <div class="cada_anime">
-                        <img class="menu_imagen" src="https://m.media-amazon.com/images/M/MV5BZjNmZDhkN2QtNDYyZC00YzJmLTg0ODUtN2FjNjhhMzE3ZmUxXkEyXkFqcGdeQXVyNjc2NjA5MTU@._V1_UY1200_CR85,0,630,1200_AL_.jpg" alt="menu_imagen1">
-                        <br>
-                        <b>Hunter x Hunter</b>
+                        }
+                        else
+                            {
+                            }
+                    }
+                    $resultado1->data_seek(0);
+                    ?>
+                            </section>
+                        </div>
                     </div>
-
-                    <div class="cada_anime">
-                        <img class="menu_imagen" src="https://pics.filmaffinity.com/fullmetal_alchemist_brotherhood_tv_series-856216430-large.jpg" alt="menu_imagen1">
-                        <br>
-                        <b>FMA: Brotherhood</b>
-                    </div>
-                    
-                    <div class="cada_anime">
-                        <img class="menu_imagen" src="https://m.media-amazon.com/images/M/MV5BNGNlNjBkODEtZThlOC00YzUxLWI0MjMtMjk3YzJmMDFlNWZlXkEyXkFqcGdeQXVyNjI0MDg2NzE@._V1_.jpg" alt="menu_imagen1">
-                        <br>
-                        <b>Cowboy Bebop</b>
-                    </div>
-
-
-                    <div class="cada_anime">
-                        <img class="menu_imagen" src="https://vignette.wikia.nocookie.net/samuraix/images/d/d2/Samurai_x.jpg/revision/latest/scale-to-width-down/340?cb=20121126183437&path-prefix=es" alt="menu_imagen1">
-                        <br>
-                        <b>Rurouni Kenshin</b>
-                    </div>
-                </div>
-            </section>
+                <?php 
+                }
+            }
+            else
+            {
+            echo "no hay datos22";
+            }
+        ?>
         </div>
-
-        <div class="menu_contenedores">
-            <h1>Estadísticas</h1>
-            <section class="carousel" data-flickity='{ "wrapAround": true, "pageDots": false}'>
-                <div class="carousel-cell">
-                    <div class="cada_anime">
-                        <img class="menu_imagen" src="https://i.pinimg.com/originals/e5/b4/96/e5b496b1780283ba9ee1fb98c6933b5c.jpg" alt="menu_imagen1">
-                        <br>
-                        <b>Neon Genesis Evangelion</b>
-                    </div>
-
-                    <div class="cada_anime">
-                        <img class="menu_imagen" src="https://m.media-amazon.com/images/M/MV5BZjNmZDhkN2QtNDYyZC00YzJmLTg0ODUtN2FjNjhhMzE3ZmUxXkEyXkFqcGdeQXVyNjc2NjA5MTU@._V1_UY1200_CR85,0,630,1200_AL_.jpg" alt="menu_imagen1">
-                        <br>
-                        <b>Hunter x Hunter</b>
-                    </div>
-
-                    <div class="cada_anime">
-                        <img class="menu_imagen" src="https://pics.filmaffinity.com/fullmetal_alchemist_brotherhood_tv_series-856216430-large.jpg" alt="menu_imagen1">
-                        <br>
-                        <b>FMA: Brotherhood</b>
-                    </div>
-                    
-                    <div class="cada_anime">
-                        <img class="menu_imagen" src="https://m.media-amazon.com/images/M/MV5BNGNlNjBkODEtZThlOC00YzUxLWI0MjMtMjk3YzJmMDFlNWZlXkEyXkFqcGdeQXVyNjI0MDg2NzE@._V1_.jpg" alt="menu_imagen1">
-                        <br>
-                        <b>Cowboy Bebop</b>
-                    </div>
-
-                    <div class="cada_anime">
-                        <img class="menu_imagen" src="https://vignette.wikia.nocookie.net/samuraix/images/d/d2/Samurai_x.jpg/revision/latest/scale-to-width-down/340?cb=20121126183437&path-prefix=es" alt="menu_imagen1">
-                        <br>
-                        <b>Rurouni Kenshin</b>
-                    </div>
-                    
-                </div>
-            </section>
-        </div>
-
-        <div class="menu_contenedores">
-            <h1>Cuentas</h1>
-            <section class="carousel" data-flickity='{ "wrapAround": true, "pageDots": false}'>
-                <div class="carousel-cell">
-                    <div class="cada_anime">
-                        <img class="menu_imagen" src="https://i.pinimg.com/originals/e5/b4/96/e5b496b1780283ba9ee1fb98c6933b5c.jpg" alt="menu_imagen1">
-                        <br>
-                        <b>Neon Genesis Evangelion</b>
-                    </div>
-
-                    <div class="cada_anime">
-                        <img class="menu_imagen" src="https://m.media-amazon.com/images/M/MV5BZjNmZDhkN2QtNDYyZC00YzJmLTg0ODUtN2FjNjhhMzE3ZmUxXkEyXkFqcGdeQXVyNjc2NjA5MTU@._V1_UY1200_CR85,0,630,1200_AL_.jpg" alt="menu_imagen1">
-                        <br>
-                        <b>Hunter x Hunter</b>
-                    </div>
-
-                    <div class="cada_anime">
-                        <img class="menu_imagen" src="https://pics.filmaffinity.com/fullmetal_alchemist_brotherhood_tv_series-856216430-large.jpg" alt="menu_imagen1">
-                        <br>
-                        <b>FMA: Brotherhood</b>
-                    </div>
-                    
-                    <div class="cada_anime">
-                        <img class="menu_imagen" src="https://m.media-amazon.com/images/M/MV5BNGNlNjBkODEtZThlOC00YzUxLWI0MjMtMjk3YzJmMDFlNWZlXkEyXkFqcGdeQXVyNjI0MDg2NzE@._V1_.jpg" alt="menu_imagen1">
-                        <br>
-                        <b>Cowboy Bebop</b>
-                    </div>
-
-                    <div class="cada_anime">
-                        <img class="menu_imagen" src="https://vignette.wikia.nocookie.net/samuraix/images/d/d2/Samurai_x.jpg/revision/latest/scale-to-width-down/340?cb=20121126183437&path-prefix=es" alt="menu_imagen1">
-                        <br>
-                        <b>Rurouni Kenshin</b>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <div class="menu_contenedores">
-            <h1>Configuraciones</h1>
-            <section class="carousel" data-flickity='{ "wrapAround": true, "pageDots": false}'>
-                <div class="carousel-cell">
-                    <div class="cada_anime">
-                        <img class="menu_imagen" src="https://i.pinimg.com/originals/e5/b4/96/e5b496b1780283ba9ee1fb98c6933b5c.jpg" alt="menu_imagen1">
-                        <br>
-                        <b>Neon Genesis Evangelion</b>
-                    </div>
-
-                    <div class="cada_anime">
-                        <img class="menu_imagen" src="https://m.media-amazon.com/images/M/MV5BZjNmZDhkN2QtNDYyZC00YzJmLTg0ODUtN2FjNjhhMzE3ZmUxXkEyXkFqcGdeQXVyNjc2NjA5MTU@._V1_UY1200_CR85,0,630,1200_AL_.jpg" alt="menu_imagen1">
-                        <br>
-                        <b>Hunter x Hunter</b>
-                    </div>
-
-                    <div class="cada_anime">
-                        <img class="menu_imagen" src="https://pics.filmaffinity.com/fullmetal_alchemist_brotherhood_tv_series-856216430-large.jpg" alt="menu_imagen1">
-                        <br>
-                        <b>FMA: Brotherhood</b>
-                    </div>
-                    
-                    <div class="cada_anime">
-                        <img class="menu_imagen" src="https://m.media-amazon.com/images/M/MV5BNGNlNjBkODEtZThlOC00YzUxLWI0MjMtMjk3YzJmMDFlNWZlXkEyXkFqcGdeQXVyNjI0MDg2NzE@._V1_.jpg" alt="menu_imagen1">
-                        <br>
-                        <b>Cowboy Bebop</b>
-                    </div>
-
-                    <div class="cada_anime">
-                        <img class="menu_imagen" src="https://vignette.wikia.nocookie.net/samuraix/images/d/d2/Samurai_x.jpg/revision/latest/scale-to-width-down/340?cb=20121126183437&path-prefix=es" alt="menu_imagen1">
-                        <br>
-                        <b>Rurouni Kenshin</b>
-                    </div>
-                </div>
-            </section>
-        </div>
-
     </section>
 
     <footer id="footer"></footer>
-    </body>
+</body>
 </html>
