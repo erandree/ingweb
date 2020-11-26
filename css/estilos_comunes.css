@@ -8,10 +8,6 @@
 
 /* ---------- Estilos de texto ---------- */
 
-*{
-    margin: 0%;
-    padding: 0%;
-}
 
 body {
     /* SOLO PARA TEXTO */
@@ -46,8 +42,7 @@ body {
 }
 
 .fondo-uki {
-    background-color: #282828;
-    background-image: url("../media/ola_chevere.svg");
+    background-color: #ffffff;
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
