@@ -33,4 +33,32 @@ echo "Conexión exitosa";
     } 
 */
 
+
+
+/*
+$servername = "localhost";
+$username = "root";
+$password = "";
+//Crear Conexion con MYSQL
+$conn = new mysqli($servername, $username, $password);
+//Comprobar la Conexión
+if ($conn->connect_error) {
+    die("Fallo de Conexión: " . $conn->connect_error);
+} 
+
+$tabla = "SELECT * FROM funciones";
+if($conn->query($tabla) === true)
+{
+    echo $tabla;
+}
+else 
+{
+    echo "falla";
+}
+
+*/
+
+
+
+
 ?>

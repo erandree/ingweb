@@ -1,37 +1,51 @@
 .menu_imagen {
-  margin: 5px 10px 5px 10px;
-  width: 200px;
-  height: 250px;
+  margin: 18px;
+  width: 220px;
+  height: 300px;
   box-sizing: border-box;
-  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-flow: column-reverse;
+  flex-wrap: wrap-reverse;
   border: black 4px solid;
-  box-shadow: 5px 10px 10px rgb(36, 36, 36, 0.5);
 }
 
-.menu_imagen:hover {
-  width: 210px;
-  height: 260px;
-  border: #ffffff 4px solid;
-  }
+.menu_imagen:hover
+{
+  border: rgb(0, 120, 219) 4px solid;
+}
+
+.carousel-bg {
+  margin-right: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 15px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+}
 
 .carousel-cell {
-  display: flex;
-  margin-right: 10px;
-  background: #838a5f;
-  padding: 15px;
-  border-radius: 5px;
-  counter-increment: carousel-cell;
+    counter-increment: carousel-cell;
 }
 
 .cada_anime {
   text-align: center;
+  color: #580054;
+  font-size: 20px;
+  margin-bottom: 30px;
 }
 
+
 .carousel {
-  margin: 20px;
+  margin: 15px;
 }
 
 .menu_contenedores {
   text-align: center;
 }
 
+.titulo_categoria {
+  color:    rgb(104, 0, 117);
+  text-shadow: 2px 2px 10px #a0a0a0;
+}
