@@ -4,9 +4,15 @@
   height: 250px;
   box-sizing: border-box;
   object-fit: cover;
-  border-left: 15px solid rgb(10, 10, 10);
+  border: black 4px solid;
   box-shadow: 5px 10px 10px rgb(36, 36, 36, 0.5);
 }
+
+.menu_imagen:hover {
+  width: 210px;
+  height: 260px;
+  border: #ffffff 4px solid;
+  }
 
 .carousel-cell {
   display: flex;
