@@ -123,7 +123,7 @@
     color: rgb(255, 255, 255);
     font-size: 22px;
     background:    rgb(0, 163, 155);
-    padding:       15px 35px;
+    padding: 10px;
     width: 50%;
     text-align: center;
     padding-top: 15px;
@@ -132,6 +132,30 @@
     transform: translateX(-50%);
 }
 
+.contenedor-form .buttonant{
+  color: rgb(20, 20, 20);
+  font-size: 22px;
+  background:    rgb(192, 192, 192);
+  width: 30%;
+  text-align: center;
+  padding-top: 15px;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.contenedor-form input[type = submit]{
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    background:    rgb(0, 163, 155);
+    padding: 10px;
+    width: 50%;
+    text-align: center;
+    padding-top: 15px;
+    box-shadow: 0 0 10px rgb(0, 255, 255);
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
 
 
 .contenedor-form .salir{
