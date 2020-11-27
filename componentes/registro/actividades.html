@@ -1,47 +1,27 @@
+<div class="contenedor-form">
+	<h3>Actividades</h3>
 
+	<label for="lugar3">* Lugar de Actividad</label>
+		<input type="text" placeholder="Lugar de actividad" name="lugar3" required>
 
-    <div class="element-separator"><hr><h3 class="section-break-title">Actividad</h3></div>
+	<label for="descripcion3">Descripción de lugar: </label>
+		<textarea name="descripcion3" id="" cols="54" rows="5" placeholder="Descripción..."></textarea>
 
+	<label for="actividad31">* Actividad #1 </label>
+		<input type="text" placeholder="Nombre de actividad" name="actividad31" required>
+	
+	<label for="horas31">* Horas de actividad #1 </label>
+		<input type="number" step="0.1" maxlength="4" name="horas31" required>
+	<br>
 
-	<div class="element-input">
-		<label class="title">
-			<span class="required">*Lugar de Actividad</span>
-		</label>
-		<div class="item-cont">
-			<input class="medium" type="text" name="input2" required="required" placeholder="lugar"/>
-			<span class="icon-place"></span>
-		</div>
-	</div>
-
-
-	<div class="element-textarea">
-		<label class="title">
-			<span class="required">*Descripción del lugar</span>
-		</label>
-		<div class="item-cont">
-			<textarea class="small" name="textarea2" cols="20" rows="5" required="required" placeholder="Descripción del lugar">
-
-			</textarea>
-			<span class="icon-place"></span>
-		</div>
-	</div>
-
-	<div class="element-input">
-		<label class="title">
-			<span class="required">*Actividad</span>
-		</label>
-		<div class="item-cont">
-			<input class="large" type="text" name="input4" required="required" placeholder="Actividad"/>
-			<span class="icon-place"></span>
-		</div>
-	</div>
-
-	<div class="element-number">
-		<label class="title">
-			<span class="required">*</span>
-		</label>
-		<div class="item-cont">
-			<input class="small" type="text" min="0" max="100" name="number" required="required" placeholder="Horas" value=""/>
-			<span class="icon-place"></span>
-		</div>
-	</div>
+	<label for="actividad32">Actividad #2 </label>
+		<input type="text" placeholder="Nombre de actividad" name="actividad32" required>
+	
+	<label for="horas32">Horas de actividad #2 </label>
+		<input type="number" step="0.1" maxlength="4" name="horas32" required>
+		
+		<input type="submit" value="Siguiente"  onclick="pestana(event, 'informacion')">
+	</form>
+	<input type="button" value="Regresar" onclick="pestana(event, 'Personales')">
+	<a href="login.html" class="salir">Salir</a>
+</div>

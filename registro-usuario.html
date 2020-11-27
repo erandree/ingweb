@@ -15,6 +15,7 @@
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="js/script-registro.js"></script>
 
         <script>
         $(function(){
@@ -25,6 +26,25 @@
         });
         $(function(){
             $("#formgenerales").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/registro/generales.html"); 
+        });
+        $(function(){
+            $("#forminformacion").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/registro/informacion.html"); 
+        });
+
+        $(function(){
+            $("#formactividades").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/registro/actividades.html"); 
+        });
+
+        $(function(){
+            $("#formfacultades").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/registro/facultades.html"); 
+        });
+
+        $(function(){
+            $("#formparticipantes").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/registro/participantes.html"); 
+        });
+
+        $(function(){
+            $("#formencargados").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/registro/encargados.html"); 
         });
     </script>
 
@@ -40,204 +60,35 @@
 
     </div>
 <form action="">
+
     <section id="generales" class="tabcontent">
         <div id="formgenerales"></div>
     </section>
 
     <section id="informacion" class="tabcontent">
-        <div class="contenedor-form">
-            <div class="formulario">
-                <h3>Información del proyecto</h3>
-
-                <p style="text-align: left; font-size: 20px;">Tipo de proyecto</p>
-                <input type="radio" name="tipoproyecto" value="Actividad" required>Actividad 
-                <br>
-                <input type="radio" name="tipoproyecto" value= "Proyecto" required>Proyecto
-                <br>
-                <br>
-
-                <label for="nombre2">* Nombre del proyecto</label>
-                <input type="text" placeholder="Nombre del proyecto" name="nombre2" required>
-
-                <label for="objetvio2">Objetivo: </label>
-                <textarea name="objetvio2" id="" cols="54" rows="5"></textarea>
-
-                <label for="descripcion2">Descripción:</label>
-                <textarea name="descripcion2" id="" cols="54" rows="5"></textarea>
-
-                <p style="text-align: left; font-size: 20px;">Nivel de proyecto</p>
-                <input type="radio" name="nivelproyecto2" value="Servicio Social" required> Servicio Social 
-                <br>
-                <input type="radio" name="nivelproyecto2" value= "Voluntariado" required> Voluntariado
-                <br>
-                <br>
-
-                <p style="text-align: left; font-size: 20px;">Modalidad</p>
-                <input type="radio" name="modalidad2" value="Individual" required> Individual
-                <br>
-                <input type="radio" name="modalidad2" value= "Grupal" required> Grupal
-                <br>
-                <br>
-                
-                    
-                    <input type="submit" value="Siguiente" onclick="pestana(event, 'actividades')">
-                    <div class="salirregresar"></div>
-                <a href="login.html" class="salir">Salir</a>
+        <div id="forminformacion"></div>
     </section>
 
     
     <section id="actividades" class="tabcontent">
-        <div class="contenedor-form">
-            <h3>Actividades</h3>
-
-            <label for="lugar3">* Lugar de Actividad</label>
-                <input type="text" placeholder="Lugar de actividad" name="lugar3" required>
-
-            <label for="descripcion3">Descripción de lugar: </label>
-                <textarea name="descripcion3" id="" cols="54" rows="5" placeholder="Descripción..."></textarea>
-
-            <label for="actividad31">* Actividad #1 </label>
-                <input type="text" placeholder="Nombre de actividad" name="actividad31" required>
-            
-            <label for="horas31">* Horas de actividad #1 </label>
-                <input type="number" step="0.1" maxlength="4" name="horas31" required>
-            <br>
-
-            <label for="actividad32">Actividad #2 </label>
-                <input type="text" placeholder="Nombre de actividad" name="actividad32" required>
-            
-            <label for="horas32">Horas de actividad #2 </label>
-                <input type="number" step="0.1" maxlength="4" name="horas32" required>
-                
-                <input type="submit" value="Siguiente"  onclick="pestana(event, 'informacion')">
-            </form>
-            <input type="button" value="Regresar" onclick="pestana(event, 'Personales')">
-            <a href="login.html" class="salir">Salir</a>
-        </div>
+        <div id="formactividades"></div>
     </section>
 
     <section id="facultades" class="tabcontent">
-        <div class="contenedor-form">
-            <h3>Facultades involucradas</h3>
-
-            
-            <label><input type="checkbox" name="cb-html5"> Ciencicas y tecnología</label><br>
-            <label><input type="checkbox" name="cb-html5"> Eléctrica</label><br>
-            <label><input type="checkbox" name="cb-html5"> Mecánica</label><br>
-            <label><input type="checkbox" name="cb-html5"> Industrial</label><br>
-            <label><input type="checkbox" name="cb-html5"> Civil</label><br>
-            <label><input type="checkbox" name="cb-html5"> Ciencias computacionales</label><br>
-                    
-            <input type="submit" value="Siguiente" onclick="pestana(event, 'informacion')">
-            <div class="salirregresar"></div>
-            <a href="login.html" class="salir">Salir</a>
-        </div>
+        <div id="formfacultades"></div>
     </section>
 
     <section id="participantes" class="tabcontent">
-        <div class="contenedor-form">
-            <h3>Agregar Participantes</h3>
-            <br>
-            <p style="text-align: left; font-size: 20px;">Integrante 1</p>
-            <br>
-
-            <label for="cedula51">* Cédula</label>
-            <input type="text" placeholder="Cédula" name="cedula51" required>
-
-            <label for="nombre51">* Nombre</label>
-            <input type="text" placeholder="Nombre" name="nombre51" required>
-
-            <label for="apellido51">* Apellido</label>
-            <input type="text" placeholder="Apellido" name="apellido51" required>
-
-            <label for="telefono51">* Teléfono residencial</label>
-            <input type="text" placeholder="xxx-xxxx" name="telefono51" required>
-
-            <label for="telefono511">* Teléfono móvil</label>
-            <input type="text" placeholder="xxx-xxxx" name="telefono511" required>
-
-            <p style="text-align: left; font-size: 20px;">Integrante 2</p>
-            <br>
-
-            <label for="cedula52">* Cédula</label>
-            <input type="text" placeholder="Cédula" name="cedula52" required>
-
-            <label for="nombre52">* Nombre</label>
-            <input type="text" placeholder="Nombre" name="nombre52" required>
-
-            <label for="apellido52">* Proponente</label>
-            <input type="text" placeholder="Apellido" name="apellido52" required>
-
-            <label for="telefono52">* Teléfono residencial</label>
-            <input type="text" placeholder="xxx-xxxx" name="telefono52" required>
-
-            <label for="telefono512">* Teléfono móvil</label>
-            <input type="text" placeholder="xxxx-xxxx" name="telefono512" required>
-
-                    
-            <input type="submit" value="Siguiente" onclick="pestana(event, 'informacion')">
-            <div class="salirregresar"></div>
-            <a href="login.html" class="salir">Salir</a>
-        </div>
+        <div id="formparticipantes"></div>
     </section>
-
 
     <section id="encargados" class="tabcontent">
-        <div class="contenedor-form">
-            <h3>Encargados</h3>
-            <br>
-            <p style="text-align: left; font-size: 20px;">Responsable</p>
-            <br>
-
-            <label for="cedula61">* Cédula</label>
-            <input type="text" placeholder="Cédula" name="cedula61" required>
-
-            <label for="nombre61">* Nombre</label>
-            <input type="text" placeholder="Nombre" name="nombre61" required>
-
-            <label for="apellido61">* Apellido</label>
-            <input type="text" placeholder="Apellido" name="apellido61" required>
-
-            <label for="apellido61">* Correo:</label>
-            <input type="email" placeholder="correo" name="apellido61" required>
-
-            <label for="telefono61">* Teléfono oficina</label>
-            <input type="text" placeholder="xxx-xxxx" name="telefono61" required>
-
-            <label for="telefono611">* Teléfono móvil</label>
-            <input type="text" placeholder="xxxx-xxxx" name="telefono611" required>
-
-
-            <p style="text-align: left; font-size: 20px;">Supervisor</p>
-            <br>
-
-            <label for="cedula62">* Cédula</label>
-            <input type="text" placeholder="Cédula" name="cedula62" required>
-
-            <label for="nombre62">* Nombre</label>
-            <input type="text" placeholder="Nombre" name="nombre62" required>
-
-            <label for="apellido62">* Apellido</label>
-            <input type="text" placeholder="Apellido" name="apellido62" required>
-
-            <label for="apellido62">* Correo:</label>
-            <input type="email" placeholder="correo" name="apellido62" required>
-
-            <label for="telefono62">* Teléfono oficina</label>
-            <input type="text" placeholder="xxx-xxxx" name="telefono62" required>
-
-            <label for="telefono622">* Teléfono móvil</label>
-            <input type="text" placeholder="xxxx-xxxx" name="telefono622" required>
-
-                    
-            <input type="submit" value="Siguiente" onclick="pestana(event, 'informacion')">
-            <div class="salirregresar"></div>
-            <a href="login.html" class="salir">Salir</a>
-        </div>
+        <div id="formencargados"></div>
     </section>
+
 </form>
 
-    <script src="js/script-registro.js"></script>
+    
 
     <script>
         function boton_loco(){

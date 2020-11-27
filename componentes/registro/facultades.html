@@ -1,82 +1,15 @@
-<div id="facultades">
-    <div class="element-separator"><hr><h3 class="section-break-title">Facultades</h3></div>
+<div class="contenedor-form">
+	<h3>Facultades involucradas</h3>
 
-	<div class="element-radio">
-		<label class="title">Facultdad organizadora<span class="required">*</span></label>		
-		<div class="column column3">
-			<label>
-				<input type="radio" name="radio3" value="Ciencias y tecnología" required="required"/>
-				<span>Ciencias y tecnología</span>
-			</label>
-			<label>
-				<input type="radio" name="radio3" value="Industrial" required="required"/>
-				<span>Industrial</span>
-			</label>
-		</div>
-		<span class="clearfix"></span>
-
-		<div class="column column3">
-			<label>
-				<input type="radio" name="radio3" value="Elétrica" required="required"/>
-				<span>Elétrica</span>
-			</label>
-			<label>
-				<input type="radio" name="radio3" value="Civil" required="required"/>
-				<span>Civil</span>
-			</label>
-		</div>
-
-		<span class="clearfix"></span>
-		<div class="column column3">
-			<label>
-				<input type="radio" name="radio3" value="Mecánica" required="required"/>
-				<span>Mecánica</span>
-			</label>
-			<label>
-				<input type="radio" name="radio3" value="Sistemas Computacionales" required="required"/>
-				<span>Sistemas Computacionales</span>
-			</label>
-		</div>
-		<span class="clearfix"></span>
-	</div>
-
-
-	<div class="element-checkbox">
-		<label class="title">Otras facultades involucradas<span class="required">*</span></label>		
-		<div class="column column3">
-			<label>
-				<input type="checkbox" name="checkbox[]" value="Ciencias y tecnología"/ required="required">
-				<span>Ciencias y tecnología</span>
-			</label>
-			<label>
-				<input type="checkbox" name="checkbox[]" value="Industrial"/ required="required">
-				<span>Industrial</span>
-			</label>
-		</div>
-		<span class="clearfix"></span>
-
-		<div class="column column3">
-			<label>
-				<input type="checkbox" name="checkbox[]" value="Elétrica"/ required="required">
-				<span>Elétrica</span>
-			</label>
-			<label>
-				<input type="checkbox" name="checkbox[]" value="Civil"/ required="required">
-				<span>Civil</span></label>
-			</div>
-			<span class="clearfix"></span>
-
-		<div class="column column3">
-			<label>
-				<input type="checkbox" name="checkbox[]" value="Mecánica"/ required="required">
-				<span>Mecánica</span>
-			</label>
-			<label>
-				<input type="checkbox" name="checkbox[]" value="Sistemas Computacionales"/ required="required">
-				<span>Sistemas Computacionales</span>
-			</label>
-		</div>
-		<span class="clearfix"></span>
-	</div>
-
+	
+	<label><input type="checkbox" name="cb-html5"> Ciencicas y tecnología</label><br>
+	<label><input type="checkbox" name="cb-html5"> Eléctrica</label><br>
+	<label><input type="checkbox" name="cb-html5"> Mecánica</label><br>
+	<label><input type="checkbox" name="cb-html5"> Industrial</label><br>
+	<label><input type="checkbox" name="cb-html5"> Civil</label><br>
+	<label><input type="checkbox" name="cb-html5"> Ciencias computacionales</label><br>
+			
+	<input type="submit" value="Siguiente" onclick="pestana(event, 'informacion')">
+	<div class="salirregresar"></div>
+	<a href="login.html" class="salir">Salir</a>
 </div>

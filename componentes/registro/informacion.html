@@ -1,108 +1,38 @@
-<div class="informacion">
-    
-    <div class="element-separator">
-		<hr>
-		<h3 class="section-break-title">INFORMACIÓN DE PROYECTO</h3>
-	</div>
+<div class="contenedor-form">
+		<h3>Información del proyecto</h3>
 
-	<div class="element-radio">
+		<p style="text-align: left; font-size: 20px;">Tipo de proyecto</p>
+		<input type="radio" name="tipoproyecto" value="Actividad" required>Actividad 
+		<br>
+		<input type="radio" name="tipoproyecto" value= "Proyecto" required>Proyecto
+		<br>
+		<br>
 
-		<label class="title">*Tipo de proyecto
-			<span class="required"></span>
-		</label>
+		<label for="nombre2">* Nombre del proyecto</label>
+		<input type="text" placeholder="Nombre del proyecto" name="nombre2" required>
 
-		<div class="column column2">
-			<label>
-				<input type="radio" name="radio" value="Actividad" required="required"/>
-				<span>Actividad</span>
-			</label>
-		</div>
-		<span class="clearfix"></span>
+		<label for="objetvio2">Objetivo: </label>
+		<textarea name="objetvio2" id="" cols="54" rows="5"></textarea>
 
-		<div class="column column2">
-			<label>
-				<input type="radio" name="radio" value="Proyecto" required="required"/>
-				<span>Proyecto</span>
-			</label>
-		</div>
-		<span class="clearfix"></span>
-	</div>
+		<label for="descripcion2">Descripción:</label>
+		<textarea name="descripcion2" id="" cols="54" rows="5"></textarea>
 
-	<div class="element-input">
-		<label class="title">
-			<span class="required">*Nombre del proyecto</span>
-		</label>
-		<div class="item-cont">
-			<input class="medium" type="text" name="input1" required="required" placeholder="Nombre del proyecto"/>
-			<span class="icon-place"></span>
-		</div>
-	</div>
+		<p style="text-align: left; font-size: 20px;">Nivel de proyecto</p>
+		<input type="radio" name="nivelproyecto2" value="Servicio Social" required> Servicio Social 
+		<br>
+		<input type="radio" name="nivelproyecto2" value= "Voluntariado" required> Voluntariado
+		<br>
+		<br>
 
-
-	<div class="element-textarea">
-		<label class="title">
-			<span class="required">*Objetivo de proyecto</span>
-		</label>
-		<div class="item-cont">
-			<textarea class="medium" name="textarea" cols="20" rows="5" required="required" placeholder="Objetivo de proyecto">
-
-			</textarea>
-			<span class="icon-place">
-
-			</span>
-		</div>
-	</div>
-
-	<div class="element-textarea">
-		<label class="title">
-			<span class="required">*Descripción</span>
-		</label>
-		<div class="item-cont">
-			<textarea class="medium" name="textarea1" cols="20" rows="5" required="required" placeholder="Descripción"></textarea>
-			<span class="icon-place"></span>
-		</div>
-	</div>
-
-
-	<div class="element-radio">
-		<label class="title">*Nivel de proyecto
-			<span class="required"></span>
-		</label>		
-		<div class="column column2">
-			<label>
-				<input type="radio" name="radio1" value="Servicio Social" required="required"/>
-				<span>Servicio Social</span>
-			</label>
-		</div>
-		<span class="clearfix"></span>
-
-		<div class="column column2">
-			<label>
-				<input type="radio" name="radio1" value="Voluntariado" required="required"/>
-				<span>Voluntariado</span>
-			</label>
-		</div>
-		<span class="clearfix"></span>
-	</div>
-
-	<div class="element-radio">
-		<label class="title">*Modalidad<span class="required"></span>
-		</label>		
-		<div class="column column2">
-			<label>
-				<input type="radio" name="radio2" value="Individual" required="required"/>
-				<span>Individual</span>
-			</label>
-		</div>
-
-		<span class="clearfix"></span>
-		<div class="column column2">
-			<label>
-				<input type="radio" name="radio2" value="Grupal" required="required"/>
-				<span>Grupal</span>
-			</label>
-		</div>
-		<span class="clearfix"></span>
-	</div>
-
+		<p style="text-align: left; font-size: 20px;">Modalidad</p>
+		<input type="radio" name="modalidad2" value="Individual" required> Individual
+		<br>
+		<input type="radio" name="modalidad2" value= "Grupal" required> Grupal
+		<br>
+		<br>
+		
+			
+			<input type="submit" value="Siguiente" onclick="pestana(event, 'actividades')">
+			<div class="salirregresar"></div>
+		<a href="login.html" class="salir">Salir</a>
 </div>
