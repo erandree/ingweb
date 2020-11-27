@@ -14,13 +14,15 @@ body {
     overflow: hidden;
     border: 1px solid rgb(172, 172, 172);
     background-color: #f1f1f1;
+    width: 100%;
   }
   
   /* Style the buttons inside the tab */
   .tab button {
     font-family: 'Roboto', sans-serif;
     background-color: inherit;
-    width: 33%;
+    width: 16.3%;
+    position: relative;
     border: none;
     outline: none;
     cursor: pointer;
