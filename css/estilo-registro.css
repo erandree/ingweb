@@ -6,9 +6,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    background-color: aqua;
-}
+
 .tab {
     overflow: hidden;
     border: 1px solid rgb(172, 172, 172);
@@ -121,25 +119,23 @@ body{
     box-shadow: 0 0 6px rgb(0, 255, 255);
 }
 
-.contenedor-form input[type=button]{
+.contenedor-form .buttonsig{
     color: rgb(255, 255, 255);
     font-size: 22px;
     background:    rgb(0, 163, 155);
-    border-radius: 10px;
     padding:       15px 35px;
-    position: relative;
-    width: 80%;
-    margin-left: 10%;
-    margin-top: 5%;
-    margin-bottom: 10px;
-    margin-right: 10px;
+    width: 50%;
+    text-align: center;
     padding-top: 15px;
     box-shadow: 0 0 10px rgb(0, 0, 0);
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 
 
 .contenedor-form .salir{
+    margin: 10px;
     display: block;
     color: #ddd;
     text-align: center;
