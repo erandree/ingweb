@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Registro usuario</title>
 
-        <link rel="stylesheet" href="formoid_files/formoid1/formoid-solid-purple.css" type="text/css" />
+        <link rel="stylesheet" href="css/formoid-solid-purple.css" type="text/css" />
         <link rel="stylesheet" href="css/header.css">
         <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -53,6 +53,7 @@
 
     </head>
     <body>
+        <header id="header"></header>
         <form class="formoid-solid-green" style="background-color:#ffffff;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:1000px;min-width:150px" method="post">
             <div class="title">
                 <h2>REGISTRO DE PROYECTO</h2>
@@ -68,6 +69,7 @@
 		        <input type="submit" value="Submit"/>
 	        </div>
         </form>
-
+        
+    <footer id="footer"></footer>
     </body>
 </html>
