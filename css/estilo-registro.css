@@ -121,7 +121,7 @@ body{
     box-shadow: 0 0 6px rgb(0, 255, 255);
 }
 
-.contenedor-form input[type=submit]{
+.contenedor-form input[type=button]{
     color: rgb(255, 255, 255);
     font-size: 22px;
     background:    rgb(0, 163, 155);
@@ -143,19 +143,4 @@ body{
     display: block;
     color: #ddd;
     text-align: center;
-}
-
-.contenedor-form input[type=button] {
-    color: rgb(20, 20, 20);
-    font-size: 20px;
-    background:    rgb(255, 255, 255);
-    border-radius: 6px;
-    padding:       10px 10px;
-    position: relative;
-    width: 40%;
-    margin-left: 30%;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    padding-top: 15px;
-    box-shadow: 0 0 10px rgb(0, 0, 0);
 }
