@@ -1,41 +1,13 @@
-<div id="generales">
-
-    <div class="element-input">
-		<label class="title">
-			<span class="required">*Proponente
-			</span>
-		</label>
-		<div class="item-cont">
-			<input class="medium" type="text" name="proponente" required="required" placeholder="Proponente"/>
-			<span class="icon-place"></span>
-		</div>
-	</div>
-
-
-	<div class="element-date">
-		<label class="title">
-			<span class="required">*Fecha de registro
-			</span>
-		</label>
-		<div class="item-cont">
-			<input class="medium" data-format="yyyy-mm-dd" type="date" name="fecha_registro" required="required" placeholder="Fecha de registro"/>
-			<span class="icon-place"></span>
-		</div>
-	</div>
-
-	<div class="element-input">
-		<label class="title">
-			<span class="required">*Dirección imagen
-
-			</span>
-		</label>
-		<div class="item-cont">
-			<input class="medium" type="text" name="input3" required="required" placeholder="imagen (direccion url debe estar cargada en el servidor)"/>
-			<span class="icon-place">
-
-			</span>
-		</div>
-	</div>
-
-
-</div>
+<section id="Generales" class="tabcontent">
+	<div class="contenedor-form">
+			<h3>PASO 1 - DATOS PERSONALES</h3>
+				<input type="text" placeholder="Nombre" class="nombre" required>
+				<input type="text" placeholder="Apellido" required>
+				<input type="date" placeholder="Fecha de Nacimineto" required>
+				<input type="text" placeholder="Teléfono" required>
+				<input type="text" placeholder="País" required>
+				
+				<input type="submit" value="Siguiente" onclick="pestana(event, 'Cuenta')">
+				<div class="salirregresar"></div>
+			<a href="login.html" class="salir">Salir</a>
+</section>

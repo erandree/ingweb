@@ -54,7 +54,7 @@
     </head>
     <body>
         <header id="header"></header>
-        <form class="formoid-solid-green" style="background-color:#ffffff;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:1000px;min-width:150px" method="post">
+        <form class="formoid-solid-green" method="POST" style="background-color:#ffffff;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:1000px;min-width:150px" >
             <div class="title">
                 <h2>REGISTRO DE PROYECTO</h2>
             </div>
@@ -66,7 +66,7 @@
             <div id="encargados"></div>
 
 	        <div class="submit">
-		        <input type="submit" value="Submit"/>
+		        <input type="submit" value="submit" name="submit">
 	        </div>
         </form>
         

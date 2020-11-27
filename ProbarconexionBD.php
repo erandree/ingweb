@@ -8,9 +8,9 @@ $db = "ssu";
 $conn = new mysqli($servername, $username, $password, $db);
 //Comprobar la Conexión
 if ($conn->connect_error) {
-    die("Fallo de Conexión: " . $conn->connect_error);
+    die("Fallo de Conexión a la BD: " . $conn->connect_error);
 } 
 
-echo "Conexión exitosa";
+echo "Conexión exitosa a la BD";
 
 ?>
