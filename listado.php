@@ -33,7 +33,7 @@
         });
 
         $(function(){
-            $("#arctipo").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/listado/tipo.php"); 
+            $("#arcnivel").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/listado/tipo.php"); 
         });
 
         </script>
