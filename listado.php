@@ -39,38 +39,38 @@
 
         </script>
 
-    <?php
-
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $db = "ssu";
-        //Crear Conexion con MYSQL
-        $conn = new mysqli($servername, $username, $password, $db);
-        //Comprobar la Conexión
-        if ($conn->connect_error) {
-            die("Fallo de Conexión: " . $conn->connect_error);
-        } 
-
-        $tablaproyectos = "SELECT * FROM proyectos"; 
-        $resultado1 = $conn->query($tablaproyectos);
-
-        $tipoproyecto = "SELECT DISTINCT tipo FROM proyectos";
-        $resultado2 = $conn->query($tipoproyecto);
-    ?>
 
 </head>
+
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$db = "ssu";
+//Crear Conexion con MYSQL
+$conn = new mysqli($servername, $username, $password, $db);
+//Comprobar la Conexión
+if ($conn->connect_error) {
+    die("Fallo de Conexión: " . $conn->connect_error);
+} 
+
+$tablaproyectos = "SELECT * FROM proyectos"; 
+$resultado1 = $conn->query($tablaproyectos);
+
+
+?>
 
 <body class="fondo-uki">
 
     <header id="header"></header>
-        <section class="seccion_central">
-
-            <div id="tipo">
-                <div id="arctipo"></div>
-            </div>
-            
-        </section>
+    <section class="seccion_central">
+        <div id="tipo">
+            <div id="arctipo"></div>
+        </div>
+        
+        
+    </section>
 
     <footer id="footer"></footer>
 </body>
