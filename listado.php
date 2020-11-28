@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="css/menu.css">
         <link rel="stylesheet" href="css/header.css">
         <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/estilo-listado.css">
         <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css"> <!--Carrusel-->
 
         <!--Carga librerías y archivos de JS-->
@@ -18,6 +19,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="js/menu-carrusel.js"></script>
+        <script src="js/script-registro.js"></script>
 
         <!--Carga componentes-->
         <script>
@@ -64,12 +66,40 @@ $resultado1 = $conn->query($tablaproyectos);
 <body class="fondo-uki">
 
     <header id="header"></header>
+
+    <div class="tab">
+      <button class="tablinks" onclick="pestana(event, 'tipo')">Tipos</button>
+      <button class="tablinks" onclick="pestana(event, 'nivel')">Niveles</button>
+      <button class="tablinks" onclick="pestana(event, 'clasificacion')">Clasificaciones</button>
+      <button class="tablinks" onclick="pestana(event, 'categoria')">Categorias</button>
+      <button class="tablinks" onclick="pestana(event, 'modalidad')">Modalidades</button>
+
+    </div>
+
+
     <section class="seccion_central">
-        <div id="tipo">
-            <div id="arctipo"></div>
+        
+        <div id="tipo" class="tabcontent">
+            <?php include 'componentes/listado/tipo.php'; ?>
         </div>
-        
-        
+
+        <div id="nivel" class="tabcontent">
+            <?php include 'componentes/listado/nivel.php'; ?>
+        </div>
+
+        <div id="clasificacion" class="tabcontent">
+            <?php include 'componentes/listado/clasificacion.php'; ?>
+        </div>
+
+        <div id="categoria" class="tabcontent">
+            <?php include 'componentes/listado/categoria.php'; ?>
+        </div>
+
+        <div id="modalidad" class="tabcontent">
+            <?php include 'componentes/listado/modalidad.php'; ?>
+        </div>
+
+
     </section>
 
     <footer id="footer"></footer>
