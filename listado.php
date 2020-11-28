@@ -36,6 +36,7 @@
             $("#arcnivel").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/listado/tipo.php"); 
         });
 
+
         </script>
 
     <?php
