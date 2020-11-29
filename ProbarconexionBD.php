@@ -11,6 +11,6 @@ if ($conn->connect_error) {
     die("Fallo de Conexión a la BD: " . $conn->connect_error);
 } 
 
-echo "Conexión exitosa a la BD";
+//echo "Conexión exitosa a la BD";
 
 ?>
