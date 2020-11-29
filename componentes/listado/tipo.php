@@ -19,7 +19,7 @@ $resultado2 = $conn->query($tipoproyecto);
                         if($row['tipo'] == $row2['tipo'])
                         {
                             ?>
-                            <a href="<?php echo $row2['direccion']?>">
+                            <a href="detalleproyecto.php?id=<?php echo $row2['id']?>">
                                 <div class="carosel-cell cada_anime">
                                         <img class="menu_imagen" src="<?php echo $row2['direccionimg'] ?>" alt="menu_imagen1">
                                         <b><?php echo $row2['nombre'] ?></b>

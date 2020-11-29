@@ -10,28 +10,36 @@
 		<br>
 		<br>
 
-		<label for="nombre2">* Nombre del proyecto</label>
-		<input type="text" placeholder="Nombre del proyecto" name="nombre2" required>
+		<label for="nombreproyecto">* Nombre del proyecto</label>
+		<input type="text" placeholder="Nombre del proyecto" name="nombreproyecto" required>
 
-		<label for="objetvio2">Objetivo: </label>
-		<textarea name="objetvio2" id="" cols="54" rows="5"></textarea>
+		<label for="objetivo">Objetivo: </label>
+		<textarea name="objetivo" id="" cols="54" rows="5"></textarea>
 
-		<label for="descripcion2">Descripción:</label>
-		<textarea name="descripcion2" id="" cols="54" rows="5"></textarea>
+		<label for="descripcion">Descripción:</label>
+		<textarea name="descripcion" id="" cols="54" rows="5"></textarea>
 
 		<p style="text-align: left; font-size: 20px;">Nivel de proyecto</p>
-		<input type="radio" name="nivelproyecto2" value="Servicio Social" required> Servicio Social 
+		<input type="radio" name="nivel" value="Servicio Social" required> Servicio Social 
 		<br>
-		<input type="radio" name="nivelproyecto2" value= "Voluntariado" required> Voluntariado
+		<input type="radio" name="nivel" value= "Voluntariado" required> Voluntariado
 		<br>
 		<br>
 
 		<p style="text-align: left; font-size: 20px;">Modalidad</p>
-		<input type="radio" name="modalidad2" value="Individual" required> Individual
+		<input type="radio" name="modalidad" value="Individual" required> Individual
 		<br>
-		<input type="radio" name="modalidad2" value= "Grupal" required> Grupal
+		<input type="radio" name="modalidad" value= "Grupal" required> Grupal
 		<br>
 		<br>
+
+		<label for="clasificacion">* Clasificación</label>
+		<input type="text" placeholder="Clasificación" name="clasificacion" required>
+
+		<label for="categoria">* Categoría</label>
+		<input type="text" placeholder="Categoría" name="categoria" required>
+
+		<input type="hidden" name="estado" value="espera">
 		
 			
 		<input type="button" class="buttonsig" value="Siguiente" onclick="pestana(event, 'actividades')">
