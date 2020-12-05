@@ -58,7 +58,7 @@ if ($conn->connect_error) {
 } 
 
 $tablaproyectos = "SELECT * FROM proyectos"; 
-$resultado1 = $conn->query($tablaproyectos);
+$consultageneral = $conn->query($tablaproyectos);
 
 
 ?>

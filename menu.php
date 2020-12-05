@@ -44,10 +44,10 @@
         } 
 
         $tablafunciones = "SELECT * FROM funciones"; 
-        $resultado1 = $conn->query($tablafunciones);
+        $consultageneral = $conn->query($tablafunciones);
 
         $categorias = "SELECT DISTINCT categoria FROM funciones";
-        $resultado2 = $conn->query($categorias);
+        $consultaespecifica = $conn->query($categorias);
     ?>
 
 
@@ -61,9 +61,9 @@
 
         
         <?php
-            if($resultado2->num_rows > 0)
+            if($consultaespecifica->num_rows > 0)
             {
-                while($row = $resultado2->fetch_assoc())
+                while($row = $consultaespecifica->fetch_assoc())
                 {
                     ?>
                     <div class="menu_contenedores">
@@ -71,7 +71,7 @@
                         <div class="carousel-bg">
                             <section class="carousel" data-flickity='{ "wrapAround": false, "pageDots": false}'>
                     <?php
-                    while($row2 = $resultado1->fetch_assoc())
+                    while($row2 = $consultageneral->fetch_assoc())
                     {
                         if($row['categoria'] == $row2['categoria'])
                         {
@@ -90,7 +90,7 @@
                             {
                             }
                     }
-                    $resultado1->data_seek(0);
+                    $consultageneral->data_seek(0);
                         ?>
                             </section>
                         </div>
