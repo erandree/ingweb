@@ -119,7 +119,7 @@ table{
 }
 
 table .head{
-    background: rgb(95, 0, 172);
+    background: rgb(0, 52, 121);
 }
 table .head td{
     color: #fff;
@@ -163,3 +163,9 @@ table tr td{
     padding: 5px 10px;
 }
 
+.checkk{
+    position: absolute;
+    margin: 12px;
+
+    margin-left: -10px;
+}

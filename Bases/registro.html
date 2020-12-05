@@ -24,42 +24,14 @@
         $(function(){
             $("#footer").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/footer.html"); 
         });
-        $(function(){
-            $("#formgenerales").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/registro/generales.html"); 
-        });
-        $(function(){
-            $("#forminformacion").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/registro/informacion.html"); 
-        });
-
-        $(function(){
-            $("#formactividades").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/registro/actividades.html"); 
-        });
-
-        $(function(){
-            $("#formfacultades").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/registro/facultades.html"); 
-        });
-
-        $(function(){
-            $("#formparticipantes").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/registro/participantes.html"); 
-        });
-
-        $(function(){
-            $("#formencargados").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/registro/encargados.html"); 
-        });
-    </script>
+        </script>
 
 </head>
 <body> 
     <header id="header"></header>
-    <div class="tab">
-      <button class="tablinks" onclick="pestana(event, 'generales')">1. Generalidades</button>
-      <button class="tablinks" onclick="pestana(event, 'informacion')">2. Información</button>
-      <button class="tablinks" onclick="pestana(event, 'actividades')">3. Actividades</button>
-      <button class="tablinks" onclick="pestana(event, 'facultades')">4. Facultades</button>
-      <button class="tablinks" onclick="pestana(event, 'participantes')">5. Participantes</button>
-      <button class="tablinks" onclick="pestana(event, 'encargados')">6. Encargados</button>
 
-    </div>
+
+
 <form action="captardatos.php" method="POST">
     <section id="generales" class="tabcontent">
         <div id="formgenerales"></div>

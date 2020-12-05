@@ -84,12 +84,12 @@
 </head>
 <body>
 	<div class="contenedor">
-		<h2>CRUD EN PHP CON MYSQL</h2>
+		<h2>EDITAR PROYECTO</h2>
 		<form action="" method="post">
 
 
 		<div class="form-group">
-			<label for="fecha">Fecha de inscripción:</label>
+			<label for="fecha" class="mensajes">Fecha de inscripción:</label>
 			<input type="date" class="input__text" name="fecha" value="<?php if($resultado) echo $resultado['fecha']; ?>">
 
 			<label for="direccionimg" class="mensajes">Dirrecion IMG:</label>

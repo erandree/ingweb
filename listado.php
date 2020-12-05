@@ -70,9 +70,6 @@ $consultageneral = $conn->query($tablaproyectos);
         <button class="nav-item nav-link active"  onclick="pestana(event, 'modalidad')">Modalidades</button>
     </nav>
 
-
-
-
     <section class="seccion_central">
         
         <div id="tipo" class="tabcontent">
