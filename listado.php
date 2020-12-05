@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="css/menu.css">
         <link rel="stylesheet" href="css/header.css">
         <link rel="stylesheet" href="css/footer.css">
-        <link rel="stylesheet" href="css/estilo-listado.css">
+        
         <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css"> <!--Carrusel-->
 
         <!--Carga librerías y archivos de JS-->
@@ -20,6 +20,9 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="js/menu-carrusel.js"></script>
         <script src="js/script-registro.js"></script>
+        <script src="js/navegacion.js"></script>
+
+        <link rel="stylesheet" href="css/estilo-listado.css">
 
         <!--Carga componentes-->
         <script>
@@ -29,15 +32,6 @@
         $(function(){
             $("#footer").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/footer.html"); 
         });
-
-        $(function(){
-            $("#arctipo").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/listado/tipo.php"); 
-        });
-
-        $(function(){
-            $("#arcnivel").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/listado/tipo.php"); 
-        });
-
 
         </script>
 
@@ -67,14 +61,16 @@ $consultageneral = $conn->query($tablaproyectos);
 
     <header id="header"></header>
 
-    <div class="tab">
-      <button class="tablinks" onclick="pestana(event, 'tipo')">Tipos</button>
-      <button class="tablinks" onclick="pestana(event, 'nivel')">Niveles</button>
-      <button class="tablinks" onclick="pestana(event, 'clasificacion')">Clasificaciones</button>
-      <button class="tablinks" onclick="pestana(event, 'categoria')">Categorias</button>
-      <button class="tablinks" onclick="pestana(event, 'modalidad')">Modalidades</button>
+    <nav  class="nav nav-pills nav-fill sticky-top nav-tabs" id="nav-tab" role="tablist" >
 
-    </div>
+        <button id="tipos" class="nav-item nav-link "  onclick="pestana(event, 'tipo')">Tipos</button>
+        <button class="nav-item nav-link active"  onclick="pestana(event, 'nivel')">Niveles</button>
+        <button class="nav-item nav-link active"  onclick="pestana(event, 'clasificacion')">Clasificaciones</button>
+        <button class="nav-item nav-link active"  onclick="pestana(event, 'categoria')">Categorias</button>
+        <button class="nav-item nav-link active"  onclick="pestana(event, 'modalidad')">Modalidades</button>
+    </nav>
+
+
 
 
     <section class="seccion_central">

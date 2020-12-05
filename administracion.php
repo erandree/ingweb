@@ -33,10 +33,12 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Admin proyectos</title>
+	<title>SSU - Admin Proyectos</title>
 	<link rel="stylesheet" href="css/estilo.css">
 	<link rel="stylesheet" href="css/header.css">
 	<link rel="stylesheet" href="css/footer.css">
+	
+
 
 	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
