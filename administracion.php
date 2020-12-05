@@ -94,7 +94,7 @@
 					<td><?php echo $fila['proponente']; ?></td>
 					<td><?php echo $fila['estado']; ?></td>
 					<td><a href="editarproyecto.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
-					<td><a href="proyecto.php?id=<?php echo $fila['id']; ?>" class="btn__detalles">Ver detalles</a></td>
+					<td><a href="proyecto.php?id=<?php echo $fila['id']; ?>" class="btn__detalles">Detalles</a></td>
 				</tr>
 			<?php endforeach ?>
 

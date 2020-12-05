@@ -28,10 +28,11 @@
 		$descripcion=$_POST['descripcion'];
 		$lugar=$_POST['lugar'];
 		$descripcionlugar=$_POST['descripcionlugar'];
+		$proponente=$_POST['proponente'];
 
 		$id=(int) $_GET['id'];
 
-		if(isset($nombre) || !empty($estado) || !empty($tipo) || !empty($nivel) || !empty($clasificacion) || !empty($categoria) || !empty($modalidad) )
+		if(isset($nombre) && !empty($estado) && !empty($tipo) && !empty($nivel) && !empty($clasificacion) && !empty($categoria) || !empty($modalidad) )
 			{
 				$consulta_update=$conn->prepare(' UPDATE proyectos SET  
 					fecha=:fecha,
@@ -46,7 +47,8 @@
 					objetivo=:objetivo,
 					descripcion=:descripcion,
 					lugar=:lugar,
-					descripcionlugar=:descripcionlugar
+					descripcionlugar=:descripcionlugar,
+					proponente=:proponente
 	
 						WHERE id=:id;'
 					);
@@ -64,6 +66,7 @@
 						':descripcion' =>$descripcion,
 						':lugar' =>$lugar,
 						':descripcionlugar' =>$descripcionlugar,
+						':proponente' =>$proponente,
 						':id' =>$id
 					));
 					header('Location: administracion.php');
@@ -87,6 +90,10 @@
 		<h2>EDITAR PROYECTO</h2>
 		<form action="" method="post">
 
+		<div class="form-group">
+		<label for="proponente" class="mensajes acomodar">Proponente:</label>
+			<input type="text" class="input__text" name="proponente" value="<?php if($resultado) echo $resultado['proponente']; ?>">
+		</div>
 
 		<div class="form-group">
 			<label for="fecha" class="mensajes">Fecha de inscripción:</label>
