@@ -54,7 +54,7 @@
     </head>
 <body class="fondo-uki">
 
-
+<header id="header"></header>
 
     <section class="seccion_central">
 
