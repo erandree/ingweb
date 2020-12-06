@@ -3,63 +3,51 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ukianime</title>
-        <!--Carga CSS-->
+        <title>Proyectos Disponibles</title>
+    
+        <!--Carga CSS escenciales todas las páginas modificables-->
+        <link rel="stylesheet" href="css/componentes_esenciales/estilos_comunes.css">
+        <link rel="stylesheet" href="css/componentes_esenciales/header.css">
+        <link rel="stylesheet" href="css/componentes_esenciales/footer.css">
+
+        <!--Boostrap últimos CSS Y JavaScript-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/estilos_comunes.css">
-        <link rel="stylesheet" href="css/menu.css">
-        <link rel="stylesheet" href="css/header.css">
-        <link rel="stylesheet" href="css/footer.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
         
-        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css"> <!--Carrusel-->
+        <!--Carga de librería para el carrsel-->
 
-        <!--Carga librerías y archivos de JS-->
-        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="js/menu-carrusel.js"></script>
-        <script src="js/script-registro.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css"> <!--Carrusel CSS-->
+        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script> <!--Carrusel JS-->
+
+
+        <!--Carga CSS escencial de la página-->
+        <link rel="stylesheet" href="css/carrusel.css">
+        
+        <!--Carga JS escencial de la página-->
         <script src="js/navegacion.js"></script>
+        <script src="js/clicknav.js"></script>
+        <script src="js/script-registro.js"></script>
 
-        <link rel="stylesheet" href="css/estilo-listado.css">
-
-        <!--Carga componentes-->
-        <script>
-        $(function(){
-            $("#header").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/header.html"); 
-        });
-        $(function(){
-            $("#footer").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/footer.html"); 
-        });
-
-        </script>
-
-
-</head>
+    </head>
 
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db = "ssu";
-//Crear Conexion con MYSQL
-$conn = new mysqli($servername, $username, $password, $db);
-//Comprobar la Conexión
-if ($conn->connect_error) {
-    die("Fallo de Conexión: " . $conn->connect_error);
-} 
-
+//Conexión a la Base de Datos
+require 'ProbarconexionBD.php';
+            
 $tablaproyectos = "SELECT * FROM proyectos"; 
 $consultageneral = $conn->query($tablaproyectos);
 
-
 ?>
 
-<body class="fondo-uki">
+<body>
 
-    <header id="header"></header>
+    <!--Cargar el Header-->
+     <?php
+        include_once 'componentes/esenciales/header.php';
+    ?>
 
     <nav  class="nav nav-pills nav-fill sticky-top nav-tabs" id="nav-tab" role="tablist" >
 
@@ -73,28 +61,31 @@ $consultageneral = $conn->query($tablaproyectos);
     <section class="seccion_central">
         
         <div id="tipo" class="tabcontent">
-            <?php include 'componentes/listado/tipo.php'; ?>
+            <?php include 'componentes/listado/proyectos/tipo.php'; ?>
         </div>
 
         <div id="nivel" class="tabcontent">
-            <?php include 'componentes/listado/nivel.php'; ?>
+            <?php include 'componentes/listado/proyectos/nivel.php'; ?>
         </div>
 
         <div id="clasificacion" class="tabcontent">
-            <?php include 'componentes/listado/clasificacion.php'; ?>
+            <?php include 'componentes/listado/proyectos/clasificacion.php'; ?>
         </div>
 
         <div id="categoria" class="tabcontent">
-            <?php include 'componentes/listado/categoria.php'; ?>
+            <?php include 'componentes/listado/proyectos/categoria.php'; ?>
         </div>
 
         <div id="modalidad" class="tabcontent">
-            <?php include 'componentes/listado/modalidad.php'; ?>
+            <?php include 'componentes/listado/proyectos/modalidad.php'; ?>
         </div>
-
 
     </section>
 
-    <footer id="footer"></footer>
+    <!--Cargar el Footer-->
+    <?php
+        include_once 'componentes/esenciales/footer.php'
+    ?>
+
 </body>
 </html>

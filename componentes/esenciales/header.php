@@ -1,3 +1,13 @@
+
+<?php
+
+session_start();
+        $usuario = $_SESSION['username'];
+        
+        $nombrebuscar = "SELECT * FROM `participantes` WHERE `correoutp` = '$usuario'";
+        $consultausuario = $conn->query($nombrebuscar); 
+?>
+
 <div class="container">
 
     <div class="row  ">
@@ -8,15 +18,15 @@
         </div>
 
         <div class="col-md-5 col-sm-12 alinearizquierda">
-                <span style="font-size: 20px;">
+                <span class="tituloheader1">
                     Camino a la excelencia a través del mejoramiento continuo 
                 </span>
                 <br>
-                <span style="font-size: 20px;">
+                <span class="tituloheader2">
                     Universidad Tecnologíca de Panamá
                 </span>
                 <br>
-                <span style="font-size: 20px;">
+                <span class="tituloheader3">
                     Servicio Social Universitario
                 </span>
         </div>
@@ -25,8 +35,12 @@
             <a href="cuenta.html" id="link_perfil">
                 <img src="https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" id="icono_perfil">
                 <span>
-                <?php 
-                    echo $usuario;
+                    <?php 
+                while($row3 = $consultausuario->fetch_assoc()){
+                    echo $row3['nombre'];
+                    echo " ";
+                    echo $row3['apellido'];
+                    }
                 ?>
                 </span>
             </a>
@@ -34,7 +48,7 @@
 
         <div class="col-md-2 col-sm-6 col-6 alinear">
             <a href="salir.php">
-                <button type="button" class="btn btn-danger">Cerrar Sesión</button>
+                <button type="button" class="btn btn-secondary">Cerrar Sesión</button>
             </a>
         
         </div>
@@ -42,6 +56,7 @@
 
     </div>
 </div>
-<section id="contenido_de_header2">
+
+<section id="barraheader">
 
 </section>

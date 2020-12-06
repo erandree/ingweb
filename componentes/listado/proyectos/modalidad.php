@@ -1,7 +1,7 @@
 
 <?php
 
-$tipoproyecto = "SELECT DISTINCT nivel FROM proyectos";
+$tipoproyecto = "SELECT DISTINCT modalidad FROM proyectos";
 $consultaespecifica = $conn->query($tipoproyecto);
 
 if($consultaespecifica->num_rows > 0)
@@ -10,15 +10,15 @@ if($consultaespecifica->num_rows > 0)
     {
         ?>
         <div class="menu_contenedores">
-            <h1 class="titulo_categoria"> <?php echo $row['nivel'];?> </h1> 
+            <h1 class="titulo_categoria"> <?php echo $row['modalidad'];?> </h1> 
             <div class="carousel-bg">
-                <section class="carousel" data-flickity='{ "wrapAround": false, "pageDots": false}'>
+                <section class="carousel" data-flickity='{ "wrapAround": false, "pageDots": false, "contain": true}'>
         <?php
         while($row2 = $consultageneral->fetch_assoc())
         {
             if($row2['estado'] == 'Disponible')
             {
-                if($row['nivel'] == $row2['nivel'])
+                if($row['modalidad'] == $row2['modalidad'])
                     {
                         ?>
                             <a href="proyecto.php?id=<?php echo $row2['id']?>">

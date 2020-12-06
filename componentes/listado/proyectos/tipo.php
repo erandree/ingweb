@@ -12,7 +12,7 @@ $consultaespecifica = $conn->query($tipoproyecto);
                     <div class="menu_contenedores">
                         <h1 class="titulo_categoria"> <?php echo $row['tipo'];?> </h1> 
                         <div class="carousel-bg">
-                            <section class="carousel" data-flickity='{ "wrapAround": false, "pageDots": false}'>
+                            <section class="carousel" data-flickity='{ "wrapAround": false, "pageDots": false, "contain": true}'>
                     <?php
                     while($row2 = $consultageneral->fetch_assoc())
                     {

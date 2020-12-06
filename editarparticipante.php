@@ -45,7 +45,7 @@
 					header('Location: adminparticipantes.php');
 			}
              else {
-                echo "<script> alert('Datos vacios PORFAVOR REVISAR');</script>";
+                $error = 1;
              }
              
 				
@@ -58,10 +58,35 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Editar Participante</title>
-	<link rel="stylesheet" href="css/estilo.css">
+		<!--Carga CSS escenciales todas las páginas modificables-->
+		<link rel="stylesheet" href="css/componentes_esenciales/estilos_comunes.css">
+        <link rel="stylesheet" href="css/componentes_esenciales/header.css">
+        <link rel="stylesheet" href="css/componentes_esenciales/footer.css">
+
+        <!--Boostrap últimos CSS Y JavaScript-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+		
+		<!--Carga CSS propio de la página-->
+		
+        
+        <!--Carga JS propio de la página-->
 </head>
 <body>
+		<!--Conexión a la base de Datos-->
+		<?php
+        	require 'ProbarconexionBD.php';
+        ?>
+
+        <!--Cargar el Header-->
+        <?php
+            include_once 'componentes/esenciales/header.php';
+		?>
 	<div class="contenedor">
+		<?php if(isset($error)) echo "<h1 class=incorrecto>¡Campos vacíos!</h1>"; ?>
+
 		<h2>EDITAR DE PARTICIPANTE</h2>
 		<form action="" method="post">
 
@@ -100,5 +125,9 @@
             
 		</form>
 	</div>
+		<!--Cargar el Footer-->
+		<?php
+            include_once 'componentes/esenciales/footer.php'
+        ?>
 </body>
 </html>

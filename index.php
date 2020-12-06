@@ -1,41 +1,10 @@
 
 <?php
 
-
 require 'ProbarconexionBD.php';
+include_once 'verificardatos.php'
 
-if(isset($_POST['login'])){ 
-	session_start();
-
-	$usuario = $_POST['correo'];
-	$clave = $_POST['password'];
-
-	if(!empty($usuario) && !empty($clave)){
-
-		$q = "SELECT COUNT(*) AS contar FROM participantes WHERE correoutp = '$usuario' AND contrasena = '$clave'";
-		$verificar = mysqli_query($conn,$q);
-		$array = mysqli_fetch_array($verificar);
-		
-		if($array['contar']>0){
-			$_SESSION['username'] = $usuario;
-			header("location: menu.php");
-		}
-		else
-		{
-			?> 
-			<h1 class="incorrecto">Datos incorrectos</h1> 
-			<?php
-		}
-		
-		
-	}
-}
 ?>
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -60,7 +29,7 @@ if(isset($_POST['login'])){
 									<label for="email">Correo institucional</label>
 										<input id="email" type="email" class="form-control" name="correo" value="" required autofocus>
 										<div class="invalid-feedback">
-											Correo invalido
+											Correo inválido
 										</div>
 								</div>
 

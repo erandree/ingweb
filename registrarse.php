@@ -30,7 +30,9 @@
 				header('Location: index.php');
 				
 			}else{
-				echo "<script> alert('Algunos campos estan vacios');</script>";
+				?> 
+				<h1 class="incorrecto">¡Existen campos vacíos!</h1> 
+				<?php
 			}
 		}
 
@@ -39,8 +41,8 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Registro de usuario</title>
-	<link rel="stylesheet" href="css/estilo.css">
+	<title>Registrarse - SSU</title>
+	<link rel="stylesheet" href="css/componentes_esenciales/estilos_comunes.css">
 </head>
 <body>
 	<div class="contenedor">
