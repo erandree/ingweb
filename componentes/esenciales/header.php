@@ -3,9 +3,14 @@
 
 session_start();
         $usuario = $_SESSION['username'];
+
+        if(!isset($usuario)){
+            header("location: index.php");
+        }
         
         $nombrebuscar = "SELECT * FROM `participantes` WHERE `correoutp` = '$usuario'";
         $consultausuario = $conn->query($nombrebuscar); 
+
 ?>
 
 <div class="container">

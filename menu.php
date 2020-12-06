@@ -40,6 +40,7 @@
             <!--Cargar el Header-->
             <?php
                 include_once 'componentes/esenciales/header.php';
+
             ?>
             
             <!--Cargar componente del listado del menú-->
