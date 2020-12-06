@@ -32,22 +32,18 @@
 
     <?php
 
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $db = "ssu";
-        //Crear Conexion con MYSQL
-        $conn = new mysqli($servername, $username, $password, $db);
-        //Comprobar la Conexión
-        if ($conn->connect_error) {
-            die("Fallo de Conexión: " . $conn->connect_error);
-        } 
+
+        require 'ProbarconexionBD.php';
+
 
         $tablafunciones = "SELECT * FROM funciones"; 
         $consultageneral = $conn->query($tablafunciones);
 
         $categorias = "SELECT DISTINCT categoria FROM funciones";
         $consultaespecifica = $conn->query($categorias);
+
+        session_start();
+        //$usuario = $_SESSION['username'];
     ?>
 
 
