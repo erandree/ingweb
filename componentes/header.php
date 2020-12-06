@@ -24,12 +24,9 @@
         <div class="col-md-3 col-sm-6 col-6 alinear">
             <a href="cuenta.html" id="link_perfil">
                 <img src="https://www.kindpng.com/picc/m/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" id="icono_perfil">
-                <span><?php 
-                while($row3 = $consultausuario->fetch_assoc()){
-                    echo $row3['nombre'];
-                    echo " ";
-                    echo $row3['apellido'];
-                    }
+                <span>
+                <?php 
+                    echo $usuario;
                 ?>
                 </span>
             </a>
