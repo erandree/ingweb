@@ -22,7 +22,7 @@
         <!--Carga componentes-->
         <script>
         $(function(){
-            $("#header").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/header.html"); 
+            $("#header").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/header.php"); 
         });
         $(function(){
             $("#footer").load("https://raw.githubusercontent.com/erandree/ingweb/master/componentes/footer.html"); 
@@ -43,7 +43,10 @@
         $consultaespecifica = $conn->query($categorias);
 
         session_start();
-        //$usuario = $_SESSION['username'];
+        $usuario = $_SESSION['username'];
+        
+        $nombre = "SELECT * FROM `participantes` WHERE `correoutp` = '$usuario'";
+        $consultausuario = $conn->query($nombre); 
     ?>
 
 
@@ -51,7 +54,7 @@
     </head>
 <body class="fondo-uki">
 
-    <header id="header"></header>
+
 
     <section class="seccion_central">
 
