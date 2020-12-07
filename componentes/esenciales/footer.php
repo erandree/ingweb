@@ -1,4 +1,4 @@
-
+<?php ?>
 <div id="contenido_del_footer">
 
     <section id="flexFooter">
