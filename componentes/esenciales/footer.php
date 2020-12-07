@@ -15,12 +15,12 @@
                     </p>
 
 
-                    <p class="minititulo">Misión</P>
+                    <p class="minititulo">Misión</p>
                     <p class="texto">
                         Sensibilizar y motivar al estudiante de la Universidad Tecnológica de Panamá hacia una participación activa en beneficio de las poblaciones vulnerables del país, a través del servicio social universitario y el voluntariado.
                     </p>
 
-                    <p class="minititulo">Visión</P>
+                    <p class="minititulo">Visión</p>
                     <p class="texto">
                         Ofrecer soluciones mediante la aplicación de los conocimientos científicos, tecnológicos y humanísticos de los estudiantes de la Universidad Tecnológica de Panamá, a diversos problemas de la sociedad.
                     </p>
@@ -36,7 +36,7 @@
                         560-3689/3705
                     </p>
                     <hr>
-                    <p class="minititulo">Correos</P>
+                    <p class="minititulo">Correos</p>
                     <p class="textocentro">
                     Dirección de Servicio Social Universitaria: servicio.social@utp.ac.pa
                     </p>
@@ -84,7 +84,7 @@
         </div>
     
         <div class="divisiones">
-            <span class="mini_texto">Anthony Dandrade - Juan Huerta - Ernesto Solís - Luis Herrera - Franklin Quintero</h5>
+            <span class="mini_texto">Anthony Dandrade - Juan Huerta - Ernesto Solís - Luis Herrera - Franklin Quintero</span>
         </div>
 
 
