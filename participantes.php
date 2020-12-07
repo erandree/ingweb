@@ -1,26 +1,29 @@
 <?php
 	include_once 'conexion.php';
-
-	$sentencia_select=$conn->prepare('SELECT * FROM proyectos ORDER BY id DESC');
+    $proyectoid = $_GET['id'];
+	$sentencia_select=$conn->prepare("SELECT * FROM proyectosparticipantes INNER JOIN participantes ON proyectosparticipantes.id_participante = participantes.id WHERE proyectosparticipantes.id_proyecto = '$proyectoid'");
 	$sentencia_select->execute();
 	$resultado=$sentencia_select->fetchAll();
 
 	// metodo buscar
 	if(isset($_POST['btn_buscar'])){
 		$buscar_text=$_POST['buscar'];
-		$select_buscar=$conn->prepare('
-			SELECT * FROM proyectos WHERE nombre LIKE :campo 
-			OR proponente LIKE :campo 
-			OR tipo LIKE :campo
-			OR nivel LIKE :campo
-			OR clasificacion LIKE :campo
-			OR categoria LIKE :campo
-			OR modalidad LIKE :campo
-			OR estado LIKE :campo;'
+		$select_buscar=$conn->prepare("
+        SELECT * FROM proyectosparticipantes INNER JOIN participantes ON proyectosparticipantes.id_participante = participantes.id WHERE proyectosparticipantes.id_proyecto = :idproyecto
+            AND
+            nombre LIKE :campo 
+			OR id LIKE :campo 
+			OR cedula LIKE :campo
+			OR nombre LIKE :campo
+			OR apellido LIKE :campo
+			OR correoutp LIKE :campo
+			OR celular LIKE :campo
+			OR funcion LIKE :campo;"
 		);
 
 		$select_buscar->execute(array(
-			':campo' =>"%".$buscar_text."%"
+            ':campo' =>"%".$buscar_text."%",
+            ':idproyecto' => $proyectoid
 		));
 
 		$resultado=$select_buscar->fetchAll();
@@ -67,45 +70,35 @@
 	?>
 	
 	<div class="contenedor">
-		<h2>TODOS LOS PROYECTOS</h2>
+		<h2>PARTICIPANTES DEL PROYECTO</h2>
 		<div class="barra__buscador">
 			<form action="" class="formulario" method="post">
 				<input type="text" name="buscar" placeholder="Buscar" 
 				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
 				
 				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
-				<a href="registro.php" class="btn btn__nuevo">Nuevo</a>
+				<a href="registrarparticipante.php?id=<?php echo $proyectoid ?>" class="btn btn__nuevo">Nuevo</a>
 			</form>
 		</div>
 		<table>
 			<tr class="head">
 				<td>Id</td>
+				<td>Cédula</td>
 				<td>Nombre</td>
-				<td>Tipo</td>
-				<td>Nivel</td>
-				<td>Clasificación</td>
-				<td>Categoría</td>
-				<td>Modalidad</td>
-				<td>Proponente</td>
-				<td>Estado</td>
-				<td colspan="5">Acción</td>
+				<td>Apellido</td>
+				<td>Correo</td>
+				<td>Celular</td>
+				<td>Función</td>
 			</tr>
 			<?php foreach($resultado as $fila):?>
 				<tr >
 					<td><?php echo $fila['id']; ?></td>
+					<td><?php echo $fila['cedula']; ?></td>
 					<td><?php echo $fila['nombre']; ?></td>
-					<td><?php echo $fila['tipo']; ?></td>
-					<td><?php echo $fila['nivel']; ?></td>
-					<td><?php echo $fila['clasificacion']; ?></td>
-					<td><?php echo $fila['categoria']; ?></td>
-					<td><?php echo $fila['modalidad']; ?></td>
-					<td><?php echo $fila['proponente']; ?></td>
-					<td><?php echo $fila['estado']; ?></td>
-					<td><a href="editarproyecto.php?id=<?php echo $fila['id']; ?>"  class="btn btn-primary btn-sm" >Editar</a></td>
-					<td><a href="participantes.php?id=<?php echo $fila['id']; ?>" class="btn btn-info btn-sm">Participantes</a></td>
-					<td><a href="encargados.php?id=<?php echo $fila['id']; ?>"  class="btn btn-success btn-sm" >Encargados</a></td>
-					<td><a href="actividades.php?id=<?php echo $fila['id']; ?>"  class="btn btn-dark btn-sm" >Actividades</a></td>
-					<td><a href="proyecto.php?id=<?php echo $fila['id']; ?>" class="btn btn-warning btn-sm">Detalles</a></td>
+					<td><?php echo $fila['apellido']; ?></td>
+					<td><?php echo $fila['correoutp']; ?></td>
+					<td><?php echo $fila['celular']; ?></td>
+					<td><?php echo $fila['funcion']; ?></td>
 
 				</tr>
 			<?php endforeach ?>
