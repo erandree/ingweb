@@ -31,7 +31,7 @@
                 <div class="col-md-4 col-sm-12 col-12 divisiones">
                     <h4 class="titulo-footer">Contáctenos</h4>
                     <br>
-                    <p class="minititulo">Teléfonos</P>
+                    <p class="minititulo">Teléfonos</p>
                     <p class="textocentro">
                         560-3689/3705
                     </p>
@@ -54,7 +54,7 @@
                     </p>
 
                     <hr>
-                    <p class="minititulo">Sitios Web</P>
+                    <p class="minititulo">Sitios Web</p>
                     <a href="https://utp.ac.pa/direccion-de-servicio-social-universitario">Servicio Social Universitario</a>
                 </div>
 
