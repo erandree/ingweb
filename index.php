@@ -38,11 +38,7 @@ include_once 'verificardatos.php'
 								</div>
 
 								<div class="form-group">
-									<label for="password">Contraseña
-										<a href="" class="float-right">
-											Olvido la contraseña?
-										</a>
-									</label>
+									<label for="password">Contraseña</label>
 									<input id="password" type="password" class="form-control" name="password" required data-eye>
 								    <div class="invalid-feedback">
 								    	Contraseña es requerida
