@@ -18,9 +18,7 @@ if(isset($_POST['login'])){
 		}
 		else
 		{
-			?> 
-			<h1 class="incorrecto">Datos incorrectos</h1> 
-			<?php
+			$error = 1;
 		}
 		
 		

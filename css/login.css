@@ -3,16 +3,16 @@ html,body {
 }
 
 body.my-login-page {
-	background-color: #d8d8d8;
+	background-color: #242424;
 	font-size: 14px;
 }
 
 .my-login-page .brand {
-	width: 90px;
-	height: 90px;
+	width: 110px;
+	height: 110px;
 	overflow: hidden;
 	border-radius: 50%;
-	margin: 40px auto;
+	margin: 30px auto;
 	box-shadow: 0 4px 8px rgba(0,0,0,.05);
 	position: relative;
 	z-index: 1;
@@ -32,12 +32,12 @@ body.my-login-page {
 }
 
 .my-login-page .card.fat {
-	margin-top: 13%;
 	padding: 10px;
 }
 
 .my-login-page .card .card-title {
 	margin-bottom: 30px;
+	text-align: center;
 }
 
 .my-login-page .form-control {
@@ -50,11 +50,19 @@ body.my-login-page {
 
 .my-login-page .btn.btn-block {
 	padding: 12px 10px;
+	background-color: purple;
+	border-color: transparent;
+}
+
+.my-login-page .btn.btn-block:hover {
+	padding: 12px 10px;
+	background-color: rgb(87, 0, 87);
+	border-color: black;
 }
 
 .my-login-page .footer {
 	margin: 40px 0;
-	color: #888;
+	color: rgb(255, 255, 255);
 	text-align: center;
 }
 
@@ -75,13 +83,11 @@ body.my-login-page {
 	}
 }
 
-.incorrecto { 
-    text-align: center;
-    color: white;
-    font-size: 25px;
-    background: red;
-    padding: 5px;
-    margin-right: 20%;
-    margin-left: 20%;
-    font-weight: 500;
+.incorrectologin { 
+    text-align: center !important;
+    color: white !important;
+    font-size: 20px !important;
+    background: red !important;
+    padding: 5px !important;
+    font-weight: 500 !important;
 }

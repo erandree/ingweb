@@ -25,7 +25,7 @@ $totalhoras = 0;
 
 while($fila = $proyecto->fetch_assoc()){
     
-?> <div class="portada">
+?> <div>
         <h1><?php echo $fila['nombre'];?></h1>
     </div>
     <br>
@@ -51,8 +51,6 @@ while($fila = $proyecto->fetch_assoc()){
     <br>
     <h2 class="etiqueta2">Actividad</h2>
     <br>
-    <h3 class="etiquetah3">Lugar: <span class="respuestas"><?php echo $fila['lugar'];?></span></h3>
-    <h3 class="etiquetah3">Descripción del lugar: <span class="respuestas"><?php echo $fila['descripcionlugar'];?></span></h3>
     
     <table class="tablas">
         <th>#</th>

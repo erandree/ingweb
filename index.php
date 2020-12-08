@@ -21,9 +21,13 @@ include_once 'verificardatos.php'
 		<div class="container h-100">
 			<div class="row justify-content-md-center h-100">
 				<div class="card-wrapper">
+				<div class="brand">
+						<img src="https://utp.ac.pa/sites/default/files/tropical_utp_logo.jpg" alt="logo">
+					</div>
 					<div class="card fat">
 						<div class="card-body">
-							<h4 class="card-title">Iniciar Sesión</h4>
+							<h4 class="card-title">¡Bienvenido!</h4>
+							<?php if(isset($error)) echo "<h3 class=incorrectologin>¡Datos incorrectos!</h3>"; ?>
 							<form method="POST" class="my-login-validation" novalidate="">
 								<div class="form-group">
 									<label for="email">Correo institucional</label>
@@ -35,7 +39,7 @@ include_once 'verificardatos.php'
 
 								<div class="form-group">
 									<label for="password">Contraseña
-										<a href="forgot.html" class="float-right">
+										<a href="" class="float-right">
 											Olvido la contraseña?
 										</a>
 									</label>
@@ -54,7 +58,7 @@ include_once 'verificardatos.php'
 
 								<div class="form-group m-0">
 									<button type="submit" name="login" class="btn btn-primary btn-block">
-										Login
+										Iniciar Sesión
 									</button>
 								</div>
 								<div class="mt-4 text-center">
@@ -64,8 +68,6 @@ include_once 'verificardatos.php'
 						</div>
 					</div>
 					<div class="footer">
-						Servicio Social Universitario
-						<hr>
 						Todos los derechos reservados
 					</div>
 				</div>
