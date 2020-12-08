@@ -75,7 +75,7 @@ $(function() {
 		});
 	});
 
-	$(".my-login-validation").submit(function() {
+	$(".validaciones").submit(function() {
 		var form = $(this);
         if (form[0].checkValidity() === false) {
           event.preventDefault();

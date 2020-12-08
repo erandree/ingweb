@@ -3,7 +3,7 @@ html,body {
 }
 
 body.my-login-page {
-	background-color: #242424;
+	background-color: #333333;
 	font-size: 14px;
 }
 
@@ -50,19 +50,18 @@ body.my-login-page {
 
 .my-login-page .btn.btn-block {
 	padding: 12px 10px;
-	background-color: purple;
-	border-color: transparent;
+	background-color: rgb(107, 0, 110);
+	border-color: transparent !important;
 }
 
 .my-login-page .btn.btn-block:hover {
 	padding: 12px 10px;
-	background-color: rgb(87, 0, 87);
-	border-color: black;
+	background-color: rgb(73, 0, 61);
 }
 
 .my-login-page .footer {
 	margin: 40px 0;
-	color: rgb(255, 255, 255);
+	color: #888;
 	text-align: center;
 }
 

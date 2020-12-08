@@ -15,9 +15,6 @@
 	$objetivo = null;
 	$descripcion = null;
 
-	$lugar = null;
-	$descripcionlugar = null;
-
 
 
 	
@@ -36,9 +33,6 @@
 		$objetivo=$_POST['objetivo'];
 		$descripcion=$_POST['descripcion'];
 
-		$lugar=$_POST['lugar'];
-		$descripcionlugar=$_POST['descripcionlugar'];
-
 		if(!empty($proponente) 
 		&& !empty($nombre) 
 		&& !empty($estado)
@@ -48,12 +42,10 @@
 		&& !empty($clasificacion)
 		&& !empty($categoria)
 		&& !empty($objetivo)
-		&& !empty($descripcion)
-		&& !empty($lugar)
-		&& !empty($descripcionlugar))
+		&& !empty($descripcion))
 			{
 				$consulta_insert=$conn->prepare('INSERT INTO proyectos(proponente,fecha,direccionimg,nombre,estado,tipo,nivel,modalidad,clasificacion,categoria,objetivo,descripcion,lugar,descripcionlugar) 
-				VALUES(:proponente,:fecha,:direccionimg,:nombre,:estado,:tipo,:nivel,:modalidad,:clasificacion,:categoria,:objetivo,:descripcion,:lugar,:descripcionlugar)');
+				VALUES(:proponente,:fecha,:direccionimg,:nombre,:estado,:tipo,:nivel,:modalidad,:clasificacion,:categoria,:objetivo,:descripcion)');
 				$consulta_insert->execute(array(
 					':proponente' =>$proponente,
 					':fecha' =>$fecha,
@@ -67,8 +59,6 @@
 					':categoria' =>$categoria,
 					':objetivo' =>$objetivo,
 					':descripcion' =>$descripcion,
-					':lugar' =>$lugar,
-					':descripcionlugar' =>$descripcionlugar
 				));
 				header('Location: administracion.php');
 				
@@ -81,137 +71,192 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<title>Nuevo usuario</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Proponer proyecto</title>
 		<!--Carga CSS escenciales todas las páginas modificables-->
-		<link rel="stylesheet" href="css/componentes_esenciales/estilos_comunes.css">
-        <link rel="stylesheet" href="css/componentes_esenciales/header.css">
-        <link rel="stylesheet" href="css/componentes_esenciales/footer.css">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/my-login.css">
+
+
 
         <!--Boostrap últimos CSS Y JavaScript-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    
 		
 		<!--Carga CSS propio de la página-->
 		
         
-        <!--Carga JS propio de la página-->
-        
+		<!--Carga JS propio de la página-->
+        <script src="js/validaciones.js"></script>
 </head>
-<body>
-	    <!--Conexión a la base de Datos-->
-		<?php
-        	require 'ProbarconexionBD.php';
-        ?>
 
-        <!--Cargar el Header-->
-        <?php
-            include_once 'componentes/esenciales/header.php';
-		?>
-		
-	<div class="contenedor">
-		<?php if(isset($error)) echo "<h1 class=incorrecto>¡Campos vacíos!</h1>"; ?>
-		<h2>REGISTRO DE PROPUESTA</h2>
-		<form action="Registro.php" method="POST">
 
-		<h2 style="float: left">Generales</h2> 
-		
-		<div class="form-group">
-		<label for="proponente" class="mensajes">Proponente:</label>
-			<input type="text" class="input__text" name="proponente" value="<?php echo $proponente ?>">
+<body class="my-login-page">
 
-			<label for="fecha" class="mensajes">Fecha de inscripción:</label>
-			<input type="date" class="input__text" name="fecha" value="<?php echo $fecha ?>">
 
-			<label for="direccionimg" class="mensajes">Dirrecion IMG:</label>
-				<input type="text" name="direccionimg" class="input__text" value="<?php echo $direccionimg ?>">
-				
+
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+				<div class="brand">
+						<img src="https://vectorified.com/images/enrollment-icon-24.png" alt="logo">
+					</div>
+					<div class="card fat">
+						<div class="card-body">
+							<h4 class="card-title">Registro de propuesta</h4>
+							<?php if(isset($error)) echo "<h3 class=incorrectologin>¡Datos incorrectos!</h3>"; ?>
+							<form method="POST" class="validaciones" novalidate="">
+
+                            <h4 style="text-align:left;">Generales</h4> 
+
+								<div class="form-group">
+									<label for="proponente">Proponente:</label>
+										<input id="proponente" type="email" class="form-control" name="proponente" value="" required autofocus>
+										<div class="invalid-feedback">
+											Proponente es requerido
+										</div>
+								</div>
+
+
+                                <div class="form-group">
+									<label for="fecha">Fecha de inscripción:</label>
+										<input id="fecha" type="date" class="form-control" name="fecha" value="" required autofocus>
+										<div class="invalid-feedback">
+											Se necesita fecha de inscripción
+										</div>
+								</div>
+
+
+								<div class="form-group">
+									<label for="direccionimg">Dirección IMG:</label>
+									<input id="direccionimg" type="text" class="form-control" name="direccionimg" value="media/proyectos/sinimagen.jpg" required autofocus>
+								    <div class="invalid-feedback">
+								    	Dirección de imagen
+							    	</div>
+								</div>
+
+                                <hr>
+
+								<h4 style="text-align:left;">Información</h4> 
+
+                                <div class="form-group">
+									<label for="nombre">Nombre de propuesta:</label>
+										<input id="nombre" type="text" class="form-control" name="nombre" value="" required autofocus>
+										<div class="invalid-feedback">
+											El nombre es requerido
+										</div>
+								</div>
+
+
+								<div class="form-group">
+										<input id="estado" type="hidden" class="form-control" name="estado" value="En revisión">
+								</div>
+
+                                <div class="form-group">
+
+                                    <label for="tipo">Tipo:</label>
+					                    <select  class="form-control" name="tipo" required autofocus>
+							                <option selected hidden value=""></option>
+							                <option value="Actividad">Actividad</option>
+							                <option value="Producto">Producto</option>
+					                    </select>
+                                        <div class="invalid-feedback">
+											El tipo es requerido
+										</div>
+
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label for="nivel" >Nivel:</label>
+				                        <select  class="form-control" name="nivel" required autofocus>
+					                        <option selected hidden value="<?php echo $nivel ?>"><?php echo $nivel ?></option>
+					                        <option value="Voluntariado">Voluntariado</option>
+					                        <option value="Servicio Social">Servicio Social</option>
+				                        </select>
+                                        <div class="invalid-feedback">
+											El nivel es requerido
+										</div>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="modalidad">Modalidad:</label>
+				                        <select  class="form-control" name="modalidad" required autofocus>
+					                        <option selected hidden value="<?php echo $modalidad ?>"><?php echo $modalidad ?></option>
+					                        <option value="Individual">Individual</option>
+					                        <option value="Grupal">Grupal</option>
+				                        </select>
+                                        <div class="invalid-feedback">
+											La modalidad es requerida
+										</div>
+                    
+                                </div>
+
+                                <div class="form-group">
+									<label for="clasificacion">Clasificación:</label>
+										<input id="clasificacion" type="text" class="form-control" name="clasificacion" value="" required autofocus>
+										<div class="invalid-feedback">
+											La clasificación es requerida
+										</div>
+								</div>
+
+                                <div class="form-group">
+									<label for="categoria">Categoría:</label>
+										<input id="categoria" type="text" class="form-control" name="categoria" value="" required autofocus>
+										<div class="invalid-feedback">
+											La categoría es requerida
+										</div>
+								</div>
+
+                                <div class="form-group">
+									<label for="objetivo">Objetivo:</label>
+										<input id="objetivo" type="text" class="form-control" name="objetivo" value="" required autofocus>
+										<div class="invalid-feedback">
+											El objetivo es requerido
+										</div>
+								</div>
+
+                                
+                                <div class="form-group">
+									<label for="descripcion">Descripción:</label>
+										<textarea id="descripcion" type="text" class="form-control" name="descripcion" value="" required autofocus></textarea>
+										<div class="invalid-feedback">
+											El objetivo es requerido
+										</div>
+								</div>
+
+
+								<div class="form-group m-0">
+									<button type="submit" name="login" class="btn btn-primary btn-block">
+										Proponer
+									</button>
+								</div>
+
+								<div class="mt-4 text-center">
+									<a href="menu.php">Salir</a>
+								</div>
+
+							</form>
+						</div>
+					</div>
+					<div class="footer">
+						Todos los derechos reservados
+					</div>
+				</div>
+			</div>
 		</div>
-		<br>
-		<hr>
-		<br>
-		<h2 style="float: left">Información del proyecto</h2> 
-			<div class="form-group">
-				<label for="nombre" class="mensajes">Nombre:</label>
-				<input type="text" name="nombre" class="input__text" value="<?php echo $nombre ?>">
+	</section>
 
-				<label for="estado" class="mensajes">Estado:</label>
-				<select  class="input__text" name="estado" >
-					<option selected hidden value="<?php echo $estado ?>"><?php echo $estado ?></option>
-					  <option value="En revisión">Proponer</option>
-				</select>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="js/validaciones.js"></script>
 
-			</div>
-
-
-				
-
-
-			<div class="form-group">
-
-				<label for="tipo" class="mensajes">Tipo:</label>
-					<select  class="input__text" name="tipo" require>
-							<option selected hidden value="<?php echo $tipo ?>"><?php echo $tipo ?></option>
-							<option value="Actividad">Actividad</option>
-							<option value="Producto">Producto</option>
-					</select>
-
-				<label for="nivel" class="mensajes">Nivel:</label>
-				<select  class="input__text" name="nivel" require>
-					<option selected hidden value="<?php echo $nivel ?>"><?php echo $nivel ?></option>
-					<option value="Voluntariado">Voluntariado</option>
-					<option value="Servicio Social">Servicio Social</option>
-				</select>
-
-				<label for="modalidad" class="mensajes">Modalidad:</label>
-				<select  class="input__text" name="modalidad">
-					<option selected hidden value="<?php echo $modalidad ?>"><?php echo $modalidad ?></option>
-					  <option value="Individual">Individual</option>
-					  <option value="Grupal">Grupal</option>
-				</select>
-
-			</div>
-
-
-			<div class="form-group">
-			<label for="clasificacion" class="mensajes">Clasificación:</label>
-				<input type="text" name="clasificacion" class="input__text" value="<?php echo $clasificacion ?>">
-
-				<label for="categoria" class="mensajes">Categoría:</label>
-				<input type="text" name="categoria" class="input__text" value="<?php echo $categoria ?>">
-			</div>
-
-			<div class="form-group">
-			<label for="objetivo" class="mensajes">Objetivo:</label>
-				<textarea type="textarea" name="objetivo" class="input__text" value="<?php echo $objetivo ?>"></textarea>
-
-				<label for="descripcion" class="mensajes">Descripción:</label>
-				<textarea type="textarea" name="descripcion" class="input__text" value="<?php echo $descripcion ?>"></textarea>
-			</div>
-		<br>
-		<hr>
-		<br>
-		<h2 style="float: left">Actividades</h2> 
-
-			<div class="form-group">
-			<label for="lugar" class="mensajes">Lugar:</label>
-				<input type="text" name="lugar" class="input__text" value="<?php echo $lugar ?>">
-
-				<label for="descripcionlugar" class="mensajes">Descripción de lugar:</label>
-				<textarea type="textarea" name="descripcionlugar"  class="input__text" value="<?php echo $lugar ?>"></textarea>
-			</div>
-
-			<div class="btn__group">
-				<a href="menu.php" class="btn btn__danger">Cancelar</a>
-				<input type="submit" name="guardar" value="Guardar" class="btn btn__primary">
-			</div>
-		</form>
-	</div>
-	    <!--Cargar el Footer-->
-		<?php
-            include_once 'componentes/esenciales/footer.php'
-        ?>
+	
 </body>
 </html>
