@@ -12,7 +12,7 @@ session_start();
 
 ?>
 
-<div class="container">
+<div class="container header">
 
     <div class="row  ">
         <div class="col-md-2 col-sm-12 alinear">

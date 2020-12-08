@@ -18,7 +18,7 @@
 
 
 	
-	if(isset($_POST['guardar'])){
+	if(isset($_POST['proponer'])){
 		$proponente=$_POST['proponente'];
 		$fecha=$_POST['fecha'];
 		$direccionimg=$_POST['direccionimg'];
@@ -44,7 +44,7 @@
 		&& !empty($objetivo)
 		&& !empty($descripcion))
 			{
-				$consulta_insert=$conn->prepare('INSERT INTO proyectos(proponente,fecha,direccionimg,nombre,estado,tipo,nivel,modalidad,clasificacion,categoria,objetivo,descripcion,lugar,descripcionlugar) 
+				$consulta_insert=$conn->prepare('INSERT INTO proyectos(proponente,fecha,direccionimg,nombre,estado,tipo,nivel,modalidad,clasificacion,categoria,objetivo,descripcion) 
 				VALUES(:proponente,:fecha,:direccionimg,:nombre,:estado,:tipo,:nivel,:modalidad,:clasificacion,:categoria,:objetivo,:descripcion)');
 				$consulta_insert->execute(array(
 					':proponente' =>$proponente,
@@ -78,6 +78,8 @@
 
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="css/my-login.css">
+		<link rel="stylesheet" href="css/componentes_esenciales/header.css">
+        <link rel="stylesheet" href="css/componentes_esenciales/footer.css">
 
 
 
@@ -93,8 +95,7 @@
 
 
 <body class="my-login-page">
-
-
+	
 
 	<section class="h-100">
 		<div class="container h-100">
@@ -106,14 +107,14 @@
 					<div class="card fat">
 						<div class="card-body">
 							<h4 class="card-title">Registro de propuesta</h4>
-							<?php if(isset($error)) echo "<h3 class=incorrectologin>¡Datos incorrectos!</h3>"; ?>
+							<?php if(isset($error)) echo "<h3 class=incorrectologin>¡Algo salio mal!</h3>"; ?>
 							<form method="POST" class="validaciones" novalidate="">
 
                             <h4 style="text-align:left;">Generales</h4> 
 
 								<div class="form-group">
 									<label for="proponente">Proponente:</label>
-										<input id="proponente" type="email" class="form-control" name="proponente" value="" required autofocus>
+										<input id="proponente" type="text" class="form-control" name="proponente" value="" required autofocus>
 										<div class="invalid-feedback">
 											Proponente es requerido
 										</div>
@@ -232,7 +233,7 @@
 
 
 								<div class="form-group m-0">
-									<button type="submit" name="login" class="btn btn-primary btn-block">
+									<button type="submit" name="proponer" class="btn btn-primary btn-block">
 										Proponer
 									</button>
 								</div>

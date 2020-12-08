@@ -5,16 +5,9 @@
 /* Navegador principal */
 
 
-#contenido_de_header {
-  white-space: nowrap;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #ffffff;
-  color: #580054;
-  height: 125px;
-  padding: 0%;
-  position: relative;
+.container header {
+  background-color: #ffffff !important;
+  color: #580054 !important;
 }
 
 #barraheader {
