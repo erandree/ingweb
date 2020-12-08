@@ -1,57 +1,44 @@
 <?php
-    include_once 'conexion.php';
+
+    require 'conexion.php';
+    $id_proyecto = $_GET['id_proyecto'];
+    $id_participante = $_GET['id_participante'];
+
+	$sentencia_select=$conn->prepare("SELECT * FROM proyectosparticipantes INNER JOIN participantes ON proyectosparticipantes.id_participante = participantes.id WHERE proyectosparticipantes.id_proyecto = '$id_proyecto' AND proyectosparticipantes.id_participante = '$id_participante'");
+	$sentencia_select->execute();
+    $resultado=$sentencia_select->fetchAll();
+
+    $buscar_id=$conn->prepare('SELECT * FROM proyectos WHERE id=:id LIMIT 1');
+    $buscar_id->execute(array(
+        ':id'=>$id_proyecto
+    ));
+    $proyecto=$buscar_id->fetch();
     
-    $id = null;
-    $correoutp = null;
-    $funcion = null;
-
-	if(isset($_GET['id'])){
-		$id=(int)  $_GET['id'];
-
-		$buscar_id=$conn->prepare('SELECT * FROM proyectos WHERE id=:id LIMIT 1');
-		$buscar_id->execute(array(
-			':id'=>$id
-		));
-		$resultado=$buscar_id->fetch();
-	}else{
-		header('Location: participantes.php');
-    }
-    
-    $todoslosusuarios=$conn->prepare('SELECT * FROM participantes');
-    $todoslosusuarios->execute();
-    $usuarios = $todoslosusuarios->fetchAll();
-
 
     if(isset($_POST['guardar'])){
-		$id_proyecto=$_POST['id_proyecto'];
-		$id_asigna=$_POST['id_asigna'];
-        $id_participante=$_POST['id_participante'];
-        $funcion=$_POST['funcion'];
+		$funcion=$_POST['funcion'];
 
-		if(!empty($id_proyecto) 
-		&& !empty($id_asigna) 
-		&& !empty($id_participante)
-        && !empty($funcion))
-        
-        {
-            $consulta_insert=$conn->prepare('INSERT INTO proyectosparticipantes(id_proyecto,id_participante,funcion,asignado_por) 
-            VALUES(:id_proyecto,:id_participante,:funcion,:id_asigna)');
-            $consulta_insert->execute(array(
-                ':id_proyecto' =>$id_proyecto,
-                ':id_participante' =>$id_participante,
-                ':funcion' =>$funcion,
-                ':id_asigna' =>$id_asigna
-            ));
-            header('Location: administracion.php');
-            
-        }else{
-            $error = 1;
-        }
-    }
+		    if(isset($funcion))
+			{
+				$consulta_update=$conn->prepare('UPDATE proyectosparticipantes SET  
+					funcion=:funcion
+	
+                        WHERE id_proyecto=:id_proyecto AND id_participante=:id_participante;
+                        '
+					);
+					$consulta_update->execute(array(
+						':funcion' =>$funcion,
+						':id_proyecto' =>$id_proyecto,
+						':id_participante' =>$id_participante
+					));
+					header("Location: participantes.php?id=$id_proyecto");
+			}
+             else {
+                $error = 1;
+                }	
 
-
+	}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -91,16 +78,16 @@
     
     <?php if(isset($error)) echo "<h1 class=incorrecto>¡Campos vacíos!</h1>"; ?>
 	<div class="contenedor">
-        <h2>ASIGNAR PARTICIPANTE</h2>
+        <h2>Editar Participante</h2>
+        <h2> <?php echo $proyecto['nombre']; ?></h2>
         <br>
-        <h2><?php echo $resultado['nombre'] ?></h2>
-		<form action="registrarparticipante.php" method="POST">
+		<form action="editardatospartproyecto.php?id_participante=<?php echo $id_participante; ?>&id_proyecto=<?php echo $id_proyecto; ?>" method="POST">
 
         <div class="form-group">
 
             <label for="proyecto" class="mensajes">Proyecto:</label>
             <select  class="input__text" name="id_proyecto" >
-                <option selected  value="<?php echo $resultado['id']; ?>"><?php echo $resultado['nombre']; ?></option>
+                <option selected  value="<?php echo $proyecto['id']; ?>"><?php echo $proyecto['nombre']; ?></option>
             </select>
 
             <label for="proyecto" class="mensajes">Lo asigna:</label>
@@ -116,17 +103,26 @@
 		
 		<div class="form-group">
 
-            <label for="id_participante" class="mensajes">Correo del participante:</label>
-                <select  class="input__text" name="id_participante" >
-
-                    <option selected hidden value="<?php echo $id; ?>"><?php echo $correoutp; ?></option>
-                    <?php foreach($usuarios as $fila):?>
-                        <option value="<?php echo $fila['id']; ?>"><?php echo $fila['correoutp']; ?></option>
+            <label for="nombrepart" class="mensajes">Cédula del participante:</label>
+                <select  class="input__text" name="nombrepart" >
+                <?php foreach($resultado as $fila):?>
+                    <option selected  value="<?php echo $fila['cedula']; ?>"><?php echo $fila['cedula']; ?></option>
                     <?php endforeach ?>
                 </select>
+
+            <label for="id_participante" class="mensajes">Correo del participante:</label>
+                <select  class="input__text" name="id_participante" >
+                    
+                <?php foreach($resultado as $fila):?>
+                    <option selected  value="<?php echo $fila['id']; ?>"><?php echo $fila['correoutp']; ?></option>
+                    <?php endforeach ?>
+                </select>
+
             <label for="funcion" class="mensajes">Función:</label>
                 <select  class="input__text" name="funcion" >
-                    <option selected hidden value="<?php echo $funcion; ?>"><?php echo $funcion; ?></option>
+                    <?php foreach($resultado as $fila):?>
+                    <option selected value="<?php echo $fila['funcion']; ?>"><?php echo $fila['funcion']; ?></option>
+                    <?php endforeach ?>
                     <option value="Administrador">Administrador</option>
                     <option value="Responsable">Responsable</option>
                     <option value="Supervisor">Supervisor</option>
@@ -140,7 +136,7 @@
 		<br>
 
 			<div class="btn__group">
-				<a href="index.php" class="btn btn__danger">Cancelar</a>
+				<a href="participantes.php?id=<?php echo $id_proyecto; ?>" class="btn btn__danger">Cancelar</a>
 				<input type="submit" name="guardar" value="Guardar" class="btn btn__primary">
 			</div>
             

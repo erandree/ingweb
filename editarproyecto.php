@@ -32,7 +32,7 @@
 
 		$id=(int) $_GET['id'];
 
-		if(isset($nombre) && !empty($estado) && !empty($tipo) && !empty($nivel) && !empty($clasificacion) && !empty($categoria) || !empty($modalidad) )
+		if(!empty($nombre) && !empty($estado) && !empty($tipo) && !empty($nivel) && !empty($clasificacion) && !empty($categoria) || !empty($modalidad) )
 			{
 				$consulta_update=$conn->prepare(' UPDATE proyectos SET  
 					fecha=:fecha,

@@ -1,24 +1,22 @@
 <?php
 	include_once 'conexion.php';
-    $proyectoid = $_GET['id'];
-	$sentencia_select=$conn->prepare("SELECT * FROM proyectosparticipantes INNER JOIN participantes ON proyectosparticipantes.id_participante = participantes.id WHERE proyectosparticipantes.id_proyecto = '$proyectoid'");
-	$sentencia_select->execute();
-	$resultado=$sentencia_select->fetchAll();
-
+	$proyectoid = $_GET['id'];
+		$sentencia_select=$conn->prepare("SELECT * FROM proyectosparticipantes INNER JOIN participantes ON proyectosparticipantes.id_participante = participantes.id WHERE proyectosparticipantes.id_proyecto = '$proyectoid'");
+		$sentencia_select->execute();
+		$resultado=$sentencia_select->fetchAll();
+	
 	// metodo buscar
 	if(isset($_POST['btn_buscar'])){
-		$buscar_text=$_POST['buscar'];
-		$select_buscar=$conn->prepare("
-        SELECT * FROM proyectosparticipantes INNER JOIN participantes ON proyectosparticipantes.id_participante = participantes.id WHERE proyectosparticipantes.id_proyecto = :idproyecto
-            AND
-            nombre LIKE :campo 
-			OR id LIKE :campo 
-			OR cedula LIKE :campo
-			OR nombre LIKE :campo
-			OR apellido LIKE :campo
-			OR correoutp LIKE :campo
-			OR celular LIKE :campo
-			OR funcion LIKE :campo;"
+			$buscar_text=$_POST['buscar'];
+			$select_buscar=$conn->prepare("
+        		SELECT * FROM proyectosparticipantes INNER JOIN participantes ON proyectosparticipantes.id_participante = participantes.id WHERE proyectosparticipantes.id_proyecto = :idproyecto
+					AND participantes.id LIKE :campo 
+					OR participantes.cedula LIKE :campo
+					OR participantes.nombre LIKE :campo
+					OR participantes.apellido LIKE :campo
+					OR participantes.correoutp LIKE :campo
+					OR participantes.celular LIKE :campo
+					OR proyectosparticipantes.funcion LIKE :campo;"
 		);
 
 		$select_buscar->execute(array(
@@ -72,12 +70,15 @@
 	<div class="contenedor">
 		<h2>PARTICIPANTES DEL PROYECTO</h2>
 		<div class="barra__buscador">
-			<form action="" class="formulario" method="post">
+			<form action="" class="formulario" method="POST">
 				<input type="text" name="buscar" placeholder="Buscar" 
 				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
-				
+
+				<input type="hidden" value="<?php $_GET['id']; ?>" name="idproye">
 				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
+
 				<a href="registrarparticipante.php?id=<?php echo $proyectoid ?>" class="btn btn__nuevo">Nuevo</a>
+
 			</form>
 		</div>
 		<table>
@@ -89,6 +90,7 @@
 				<td>Correo</td>
 				<td>Celular</td>
 				<td>Función</td>
+				<td colspan="2">Acción</td>
 			</tr>
 			<?php foreach($resultado as $fila):?>
 				<tr >
@@ -99,6 +101,8 @@
 					<td><?php echo $fila['correoutp']; ?></td>
 					<td><?php echo $fila['celular']; ?></td>
 					<td><?php echo $fila['funcion']; ?></td>
+					<td><a href="editardatospartproyecto.php?id_participante=<?php echo $fila['id']; ?>&id_proyecto=<?php echo $proyectoid; ?>"  class="btn btn-primary btn-sm" >Editar</a></td>
+					<td><a href="eliminarpartproyecto.php?id=<?php echo $fila['id']; ?>&id_proyecto=<?php echo $proyectoid; ?>"  class="btn btn-danger btn-sm" >Eliminar</a></td>
 
 				</tr>
 			<?php endforeach ?>

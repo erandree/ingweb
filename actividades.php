@@ -1,26 +1,30 @@
+
 <?php
-	include_once 'conexion.php';
-
-	$sentencia_select=$conn->prepare('SELECT * FROM proyectos ORDER BY id DESC');
-	$sentencia_select->execute();
-	$resultado=$sentencia_select->fetchAll();
-
+    include_once 'conexion.php';
+    
+	    $proyectoid = $_GET['id'];
+		$sentencia_select=$conn->prepare("SELECT * FROM actividades WHERE fk_proyecto = '$proyectoid'");
+		$sentencia_select->execute();
+		$resultado=$sentencia_select->fetchAll();
+    
+        
 	// metodo buscar
 	if(isset($_POST['btn_buscar'])){
-		$buscar_text=$_POST['buscar'];
-		$select_buscar=$conn->prepare('
-			SELECT * FROM proyectos WHERE nombre LIKE :campo 
-			OR proponente LIKE :campo 
-			OR tipo LIKE :campo
-			OR nivel LIKE :campo
-			OR clasificacion LIKE :campo
-			OR categoria LIKE :campo
-			OR modalidad LIKE :campo
-			OR estado LIKE :campo;'
+			$buscar_text=$_POST['buscar'];
+			$select_buscar=$conn->prepare("
+        		SELECT * FROM proyectosparticipantes INNER JOIN participantes ON proyectosparticipantes.id_participante = participantes.id WHERE proyectosparticipantes.id_proyecto = :idproyecto
+					AND participantes.id LIKE :campo 
+					OR participantes.cedula LIKE :campo
+					OR participantes.nombre LIKE :campo
+					OR participantes.apellido LIKE :campo
+					OR participantes.correoutp LIKE :campo
+					OR participantes.celular LIKE :campo
+					OR proyectosparticipantes.funcion LIKE :campo;"
 		);
 
 		$select_buscar->execute(array(
-			':campo' =>"%".$buscar_text."%"
+            ':campo' =>"%".$buscar_text."%",
+            ':idproyecto' => $proyectoid
 		));
 
 		$resultado=$select_buscar->fetchAll();
@@ -33,7 +37,7 @@
 <html lang="es">
 	<head>
 		<meta charset="UTF-8">
-		<title>SSU - Admin Proyectos</title>
+		<title>Participantes - proyecto</title>
 
 		<!--Carga CSS escenciales todas las páginas modificables-->
 		<link rel="stylesheet" href="css/componentes_esenciales/estilos_comunes.css">
@@ -48,6 +52,7 @@
         
 
         <!--Carga CSS escencial de la página-->
+		<link rel="stylesheet" href="css/estilo.css">
         
         <!--Carga JS escencial de la página-->
 
@@ -66,44 +71,37 @@
 	?>
 	
 	<div class="contenedor">
-		<h2>TODOS LOS PROYECTOS</h2>
+		<h2>ACTIVIDADES DEL PROYECTO</h2>
 		<div class="barra__buscador">
-			<form action="" class="formulario" method="post">
+			<form action="" class="formulario" method="POST">
 				<input type="text" name="buscar" placeholder="Buscar" 
 				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
-				
+
+				<input type="hidden" value="<?php $_GET['id']; ?>" name="idproye">
 				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
-				<a href="registro.php" class="btn btn__nuevo">Nuevo</a>
+
+				<a href="agregaractividad.php?id_proyecto=<?php echo $proyectoid ?>" class="btn btn__nuevo">Nuevo</a>
+
 			</form>
 		</div>
 		<table>
 			<tr class="head">
 				<td>Id</td>
-				<td>Nombre</td>
-				<td>Tipo</td>
-				<td>Nivel</td>
-				<td>Clasificación</td>
-				<td>Categoría</td>
-				<td>Modalidad</td>
-				<td>Proponente</td>
-				<td>Estado</td>
-				<td colspan="5">Acción</td>
+                <td>lugar</td>
+                <td>Descripción del lugar</td>
+				<td>actividad</td>
+				<td>horas</td>
+				<td colspan="2">Acción</td>
 			</tr>
 			<?php foreach($resultado as $fila):?>
 				<tr >
 					<td><?php echo $fila['id']; ?></td>
-					<td><?php echo $fila['nombre']; ?></td>
-					<td><?php echo $fila['tipo']; ?></td>
-					<td><?php echo $fila['nivel']; ?></td>
-					<td><?php echo $fila['clasificacion']; ?></td>
-					<td><?php echo $fila['categoria']; ?></td>
-					<td><?php echo $fila['modalidad']; ?></td>
-					<td><?php echo $fila['proponente']; ?></td>
-					<td><?php echo $fila['estado']; ?></td>
-					<td><a href="editarproyecto.php?id=<?php echo $fila['id']; ?>"  class="btn btn-primary btn-sm" >Editar</a></td>
-					<td><a href="participantes.php?id=<?php echo $fila['id']; ?>" class="btn btn-info btn-sm">Participantes</a></td>
-					<td><a href="actividades.php?id=<?php echo $fila['id']; ?>"  class="btn btn-dark btn-sm" >Actividades</a></td>
-					<td><a href="proyecto.php?id=<?php echo $fila['id']; ?>" class="btn btn-warning btn-sm">Detalles</a></td>
+                    <td><?php echo $fila['lugar']; ?></td>
+                    <td><?php echo $fila['descripcion_lugar']; ?></td>
+					<td><?php echo $fila['actividad']; ?></td>
+					<td><?php echo $fila['horas']; ?></td>
+					<td><a href="editaractividad.php?id_actividad=<?php echo $fila['id']; ?>&id_proyecto=<?php echo $proyectoid; ?>"  class="btn btn-primary btn-sm" >Editar</a></td>
+					<td><a href="eliminaractividad.php?id_actividad=<?php echo $fila['id']; ?>&id_proyecto=<?php echo $proyectoid; ?>"  class="btn btn-danger btn-sm" >Eliminar</a></td>
 
 				</tr>
 			<?php endforeach ?>
