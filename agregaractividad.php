@@ -116,7 +116,7 @@
 		<br>
 
 			<div class="btn__group">
-				<a href="actividades.php?id=<?php echo $id; ?>" class="btn btn__danger">Cancelar</a>
+				<a href="actividades.php?id=<?php echo $id_proyecto; ?>" class="btn btn__danger">Cancelar</a>
 				<input type="submit" name="guardar" value="Guardar" class="btn btn__primary">
 			</div>
             

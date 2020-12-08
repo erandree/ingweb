@@ -52,7 +52,7 @@ session_start();
 
         <div class="col-md-2 col-sm-6 col-6 alinear">
             <a href="salir.php">
-                <button type="button" class="btn btn-secondary">Cerrar Sesión</button>
+                <button type="button" class="btn btn-danger">Cerrar Sesión</button>
             </a>
         
         </div>

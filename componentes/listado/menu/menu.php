@@ -21,7 +21,7 @@ $consultaespecifica = $conn->query($categorias);
                     <div class="menu_contenedores">
                         <h1 class="titulo_categoria"> <?php echo $row['categoria'];?> </h1> 
                         <div class="carousel-bg">
-                            <section class="carousel" data-flickity='{ "wrapAround": false, "pageDots": false, "contain": true}'>
+                            <section class="carousel" data-flickity='{ "wrapAround": false, "pageDots": true, "contain": true}'>
                     <?php
                     while($row2 = $consultageneral->fetch_assoc())
                     {

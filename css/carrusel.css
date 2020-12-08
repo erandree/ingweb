@@ -14,7 +14,7 @@
 
 .menu_imagen:hover
 {
-  border: #00dada 4px solid;
+  border: #00cbda 4px solid;
   width: 225px;
   height: 310px;
 }
@@ -33,10 +33,15 @@
 
 .cada_anime {
   text-align: center;
-  color: #580054;
+  color: #006ba8;
   font-size: 18px;
   margin-bottom: 30px;
   display: table-caption;
+}
+
+.cada_anime:hover {
+  color: #000000;
+  text-decoration: none;
 }
 
 
@@ -46,9 +51,10 @@
 
 .menu_contenedores {
   text-align: center;
+  margin-bottom: 55px;
 }
 
 .titulo_categoria {
-  color:    rgb(104, 0, 117);
-  text-shadow: 2px 2px 10px #a0a0a0;
+  color:    rgb(0, 112, 163);
+  text-shadow: 2px 2px 10px #aaeeff;
 }
