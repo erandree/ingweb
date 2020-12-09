@@ -63,7 +63,7 @@ $consultageneral = $conn->query($tablaproyectos);
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" onclick="pestana(event, 'tipo')">Tipos</a>
+                        <a class="nav-link" onclick="pestana(event, 'tipo2')">Tipos</a>
                     </li>
 
                     <li class="nav-item">
@@ -92,7 +92,7 @@ $consultageneral = $conn->query($tablaproyectos);
             <?php include 'componentes/listado/proyectos/todos.php'; ?>
         </div>
         
-        <div id="tipo" class="tabcontent">
+        <div id="tipo2" class="tabcontent">
             <?php include 'componentes/listado/proyectos/tipo.php'; ?>
         </div>
 

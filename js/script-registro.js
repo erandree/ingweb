@@ -1,5 +1,5 @@
 
-function pestana(evt, tipo) {
+function pestana(evt, tipos) {
   var i, tabcontent, tablinks, activar;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
@@ -9,7 +9,7 @@ function pestana(evt, tipo) {
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
-  document.getElementById(tipo).style.display = "block";
+  document.getElementById(tipos).style.display = "block";
   evt.currentTarget.className += " active";
 }
 
