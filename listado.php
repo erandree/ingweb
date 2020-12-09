@@ -63,7 +63,7 @@ $consultageneral = $conn->query($tablaproyectos);
                     </li>
 
                     <li class="nav-item">
-                        <a  class="nav-link" onclick="pestana(event, 'tipo')" >Tipos</a>
+                        <a class="nav-link" onclick="pestana(event, 'tipo')">Tipos</a>
                     </li>
 
                     <li class="nav-item">
