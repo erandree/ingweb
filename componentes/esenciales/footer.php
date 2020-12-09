@@ -55,13 +55,13 @@
 
                     <hr>
                     <p class="minititulo">Sitios Web</p>
-                    <a href="https://utp.ac.pa/direccion-de-servicio-social-universitario">Servicio Social Universitario</a>
+                    <a target="_blank" href="https://utp.ac.pa/direccion-de-servicio-social-universitario">Servicio Social Universitario</a>
                 </div>
 
                 <div class="col-md-4 col-sm-12 col-12 divisiones">
                     <h4 class="titulo-footer">Redes Sociales</h4>
                     <br>
-                    <img src="https://icongr.am/entypo/facebook.svg?size=15&color=b4b4ba" alt="facebook"> 
+                    <img src="https://icongr.am/entypo/facebook.svg?size=15&color=b4b4ba" alt="Facebook"> 
                     <label for="" class="red">UTPSSU</label>
                     <br>
                     <br>

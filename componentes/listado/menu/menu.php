@@ -30,7 +30,7 @@ $consultaespecifica = $conn->query($categorias);
                             ?>
                             <a href="<?php echo $row2['direccion']?>">
                                 <div class="carosel-cell cada_anime">
-                                        <img class="menu_imagen" src="<?php echo $row2['imagen'] ?>" alt="menu_imagen1">
+                                        <img class="menu_imagen" src="<?php echo $row2['imagen'] ?>" alt="<?php echo $row2['nombre'] ?>"" title="<?php echo $row2['categoria'] ?> - <?php echo $row2['nombre'] ?>">
                                         <b><?php echo $row2['nombre'] ?></b>
                                 </div>
                             </a>
