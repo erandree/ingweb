@@ -1,3 +1,30 @@
+<?php
+
+include("ProbarconexionBD.php");
+
+
+
+$idproyecto = $_GET["id"];
+
+$tablaproyectos = "SELECT * FROM `proyectos` WHERE id=$idproyecto";
+$proyecto = $conn->query($tablaproyectos);
+
+$tablaactividades = "SELECT * FROM `actividades` WHERE fk_proyecto=$idproyecto";
+$actividades = $conn->query($tablaactividades);
+
+$tablapartproyecto = "SELECT * FROM `proyectosparticipantes` INNER JOIN `participantes` ON proyectosparticipantes.id_participante = participantes.id WHERE proyectosparticipantes.id_proyecto = '$idproyecto'";
+$participantes = $conn->query($tablapartproyecto);
+
+
+
+$contador = 0;
+$totalhoras = 0;
+
+?>
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +34,7 @@
         <title>Detalles</title>
 
         <!--Carga CSS escenciales todas las páginas modificables-->
-        <link rel="stylesheet" href="css/componentes_esenciales/estilos_comunes.css">
+        
         <link rel="stylesheet" href="css/componentes_esenciales/header.css">
         <link rel="stylesheet" href="css/componentes_esenciales/footer.css">
 
@@ -19,35 +46,183 @@
 
 
         <!--Carga CSS escencial de la página-->
-        <link rel="stylesheet" href="css/estilo-detalles.css">
+        <!--<link rel="stylesheet" href="css/estilo-detalles.css">-->
+        <link rel="stylesheet" type="text/css" href="css/detalles.css">
+        <link rel="stylesheet" href="css/componentes_esenciales/estilos_comunes.css">
         
         <!--Carga JS escencial de la página-->
 
 
-        
-
-    </script>
     </head>
     <body>
         <!--Conexión a la base de Datos-->
         <?php
             require 'ProbarconexionBD.php';
         ?>
+                    <!--Cargar el Header-->
+                    <?php
+                include_once 'componentes/esenciales/header.php';
+
+            ?>
 
         <!--Cargar el Header-->
-        <?php
-            include_once 'componentes/esenciales/header.php';
-        ?>
 
-        <div class="fondoabajo">
-            <section class="fondoarriba">
-                <?php include 'detallesproyecto.php'; ?>
-            </section>
-        </div>
+<?php
+while($fila = $proyecto->fetch_assoc()){
+    
+?> 
 
-        <!--Cargar el Footer-->
-        <?php
-            include_once 'componentes/esenciales/footer.php'
-        ?>
+<body class="my-login-page">
+	
+
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+				    <div class="brand">
+						<img src="<?php echo $fila['direccionimg'];?>" alt="logo">
+					</div>
+					<div class="card fat">
+						<div class="card-body">
+							<h3 class="card-title">Proyecto - <?php echo $fila['nombre'];?></h3>
+							
+                            <h4 style="text-align:center;">Generales</h4> 
+
+								<div class="form-group">
+                                    <span class="subtitulos">Proponente:</span> 
+                                    <span class="valor"><?php echo $fila['proponente'];?></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <span class="subtitulos">fecha de inscripción:</span> 
+                                    <span class="valor"><?php echo $fila['fecha'];?></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <span class="subtitulos">URL imagen:</span> 
+                                    <span class="valor"><?php echo $fila['direccionimg'];?></span>
+                                </div>
+
+                                <hr>
+
+                                <div class="form-group">
+                                    <span class="subtitulos">Titulo de proyecto:</span> 
+                                    <span class="valor"><?php echo $fila['nombre'];?></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <span class="subtitulos">Tipo:</span> 
+                                    <span class="valor"><?php echo $fila['tipo'];?></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <span class="subtitulos">Nivel:</span> 
+                                    <span class="valor"><?php echo $fila['nivel'];?></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <span class="subtitulos">Modalidad:</span> 
+                                    <span class="valor"><?php echo $fila['modalidad'];?></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <span class="subtitulos">Clasificacion:</span> 
+                                    <span class="valor"><?php echo $fila['clasificacion'];?></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <span class="subtitulos">Categoría:</span> 
+                                    <span class="valor"><?php echo $fila['categoria'];?></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <span class="subtitulos">Objetivo:</span> 
+                                    <span class="valor"><?php echo $fila['objetivo'];?></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <span class="subtitulos">Descripcion:</span> 
+                                    <br>
+                                    <span class="valor"><?php echo $fila['descripcion'];?></span>
+                                </div>
+
+                                <hr>
+                                <h4 style="text-align:center;">Actividades</h4> 
+
+                                <div class="form-group">
+                                    <table >
+                                        <tr class="head">
+                                            <td>#</td>
+                                            <td>Lugar</td>
+                                            <td>Actividad</td>
+                                            <td>Horas</td>
+                                        </tr>
+                                        <?php
+
+                                            while($filaact = $actividades->fetch_assoc()){
+                                        ?>
+                                            <tr>
+                                                <td><?php echo $contador + 1?></td>
+                                                <td><?php echo $filaact['lugar'];?></td>
+                                                <td><?php echo $filaact['actividad'];?></td>
+                                                <td><?php echo $filaact['horas'];?></td>
+                                            </tr>
+
+                                        <?php
+                                            $totalhoras = $totalhoras + $filaact['horas'];
+                                            $contador =  $contador + 1;
+                                        }?>
+                                            <tr>
+                                                <td class="vacia"></td>
+                                                <td class="vacia"></td>
+                                                <td class="vacia"></td>
+                                                <td><?php echo $totalhoras;?></td>
+                                            </tr>
+                                    </table>
+                                </div>
+
+                                <?php $contador = 0; ?>
+
+                                <hr>
+                                <h4 style="text-align:center;">Participantes</h4> 
+
+                                <div class="form-group">
+                                        <table>
+                                            <tr class="head">
+                                                <td>#</td>
+                                                <td>Cédula</td>
+                                                <td>Correo</td>
+                                            </tr>
+
+                                            <?php
+                                            while($filaparticipantes = $participantes->fetch_assoc()){
+                                            ?>
+                                            
+                                                <tr>
+                                                    <td><?php echo $contador = $contador + 1?></td>
+                                                    <td><?php echo $filaparticipantes['cedula'];?></td>
+                                                    <td><?php echo $filaparticipantes['correoutp'];?></td>
+                                                </tr>
+
+                                                
+
+                                            <?php  } ?>
+                                        </table>
+                                    <?php
+                                    $contador = 0;
+                                    ?>                                  
+                                </div>
+
+                        </div>
+                    </div>
+					<div class="footer">
+						Todos los derechos reservados
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
     </body>
+                                    <?php } ?>
 </html>
+    

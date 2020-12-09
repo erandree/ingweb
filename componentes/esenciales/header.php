@@ -12,16 +12,16 @@ session_start();
 
 ?>
 
-<div class="container header">
+<div class="container-fluid bg-white">
 
-    <div class="row  ">
-        <div class="col-md-2 col-sm-12 alinear">
+    <div class="row">
+        <div class="col-md-3 col-sm-12 alinear">
             <a class="inicio" href="menu.php">
                 <img src="https://utp.ac.pa/sites/default/files/tropical_utp_logo.jpg" alt="logo" id="logo">
             </a>
         </div>
 
-        <div class="col-md-5 col-sm-12 alinearizquierda">
+        <div class="col-md-4 col-sm-12 alinearizquierda">
                 <span class="tituloheader1">
                     Camino a la excelencia a través del mejoramiento continuo 
                 </span>

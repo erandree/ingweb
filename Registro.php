@@ -106,11 +106,11 @@
 					</div>
 					<div class="card fat">
 						<div class="card-body">
-							<h4 class="card-title">Registro de propuesta</h4>
+							<h3 class="card-title">Registro de propuesta</h3>
 							<?php if(isset($error)) echo "<h3 class=incorrectologin>¡Algo salio mal!</h3>"; ?>
 							<form method="POST" class="validaciones" novalidate="">
 
-                            <h4 style="text-align:left;">Generales</h4> 
+                            <h4 style="text-align:center;">Generales</h4> 
 
 								<div class="form-group">
 									<label for="proponente">Proponente:</label>
@@ -140,7 +140,7 @@
 
                                 <hr>
 
-								<h4 style="text-align:left;">Información</h4> 
+								<h4 style="text-align:center;">Información</h4> 
 
                                 <div class="form-group">
 									<label for="nombre">Nombre de propuesta:</label>

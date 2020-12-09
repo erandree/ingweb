@@ -26,8 +26,6 @@
 		$categoria=$_POST['categoria'];
 		$objetivo=$_POST['objetivo'];
 		$descripcion=$_POST['descripcion'];
-		$lugar=$_POST['lugar'];
-		$descripcionlugar=$_POST['descripcionlugar'];
 		$proponente=$_POST['proponente'];
 
 		$id=(int) $_GET['id'];
@@ -46,8 +44,6 @@
 					categoria=:categoria,
 					objetivo=:objetivo,
 					descripcion=:descripcion,
-					lugar=:lugar,
-					descripcionlugar=:descripcionlugar,
 					proponente=:proponente
 	
 						WHERE id=:id;'
@@ -64,8 +60,6 @@
 						':categoria' =>$categoria,
 						':objetivo' =>$objetivo,
 						':descripcion' =>$descripcion,
-						':lugar' =>$lugar,
-						':descripcionlugar' =>$descripcionlugar,
 						':proponente' =>$proponente,
 						':id' =>$id
 					));
@@ -183,14 +177,6 @@
 
 				<label for="descripcion" class="mensajes">Descripción:</label>
 				<textarea type="textarea" name="descripcion" value="<?php if($resultado) echo $resultado['descripcion']; ?>" class="input__text"><?php if($resultado) echo $resultado['descripcion']; ?></textarea>
-			</div>
-
-			<div class="form-group">
-			<label for="lugar" class="mensajes">Lugar:</label>
-				<input type="text" name="lugar" value="<?php if($resultado) echo $resultado['lugar']; ?>" class="input__text">
-
-				<label for="descripcionlugar" class="mensajes">Descripción de lugar:</label>
-				<textarea type="textarea" name="descripcionlugar" value="<?php if($resultado) echo $resultado['descripcion']; ?>" class="input__text"><?php if($resultado) echo $resultado['descripcionlugar']; ?></textarea>
 			</div>
 
 

@@ -42,7 +42,7 @@
                 ':funcion' =>$funcion,
                 ':id_asigna' =>$id_asigna
             ));
-            header('Location: administracion.php');
+            header("Location: participantes.php?id=$id_proyecto");
             
         }else{
             $error = 1;
