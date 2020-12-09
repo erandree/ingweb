@@ -12,6 +12,7 @@ session_start();
 
 ?>
 
+
 <div class="container-fluid bg-white">
 
     <div class="row">
@@ -63,4 +64,9 @@ session_start();
 
 <section id="barraheader">
 
+<span class="ir-arriba icon-arrow-up2">
+		
+        </span>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script type="text/javascript" src="js/irarriba.js"></script>
 </section>

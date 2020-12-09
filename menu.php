@@ -31,7 +31,6 @@
     </head>
 
     <body>
-
             <!--Conexión a la base de Datos-->
             <?php
             require 'ProbarconexionBD.php';
@@ -47,7 +46,6 @@
             <?php
                 include_once 'componentes/listado/menu/menu.php';
             ?>
-
             <!--Cargar el Footer-->
             <?php
             include_once 'componentes/esenciales/footer.php'

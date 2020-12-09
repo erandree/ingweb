@@ -46,7 +46,6 @@ $totalhoras = 0;
 
 
         <!--Carga CSS escencial de la página-->
-        <!--<link rel="stylesheet" href="css/estilo-detalles.css">-->
         <link rel="stylesheet" type="text/css" href="css/detalles.css">
         <link rel="stylesheet" href="css/componentes_esenciales/estilos_comunes.css">
         
