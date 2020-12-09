@@ -189,6 +189,7 @@ table .head td{
     font-weight: bold;
     font-size: 15px;
     text-align: center;
+    background: rgb(0, 52, 121);
 }
 
 table tr td{
@@ -241,3 +242,19 @@ table tr td{
     font-weight: 500;
     margin-top: 10px;
 }
+
+
+.btnmenu {
+    background-color: transparent;
+    border: none; /* Remove borders */
+    color: rgb(233, 233, 233); /* White text */
+    padding: 10px 10px; /* Some padding */
+    font-size: 20px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+    border-radius: 50%;
+  }
+  
+  /* Darker background on mouse-over */
+  .btnmenu:hover {
+    color: rgb(255, 255, 255);
+  }

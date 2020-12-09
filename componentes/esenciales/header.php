@@ -62,11 +62,15 @@ session_start();
     </div>
 </div>
 
-<section id="barraheader">
+<section class="barraheader sticky-top">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<span class="ir-arriba icon-arrow-up2">
-		
-        </span>
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script type="text/javascript" src="js/irarriba.js"></script>
+
+<button class="btnmenu" onclick="window.history.back()"> <i class="fa fa-arrow-left"></i> Regresar</button>
+
+
+<a href="menu.php">
+<button class="btnmenu"> <i class="fa fa-home"></i> Menu</button>
+</a>
+
 </section>

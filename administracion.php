@@ -76,7 +76,7 @@
 				<a href="registro.php" class="btn btn__nuevo">Nuevo</a>
 			</form>
 		</div>
-		<table>
+		<table class="table table-responsive table-striped">
 			<tr class="head">
 				<td>Id</td>
 				<td>Nombre</td>

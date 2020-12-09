@@ -49,13 +49,37 @@ $consultageneral = $conn->query($tablaproyectos);
         include_once 'componentes/esenciales/header.php';
     ?>
 
-    <nav  class="nav nav-pills nav-fill sticky-top nav-tabs" id="nav-tab" role="tablist" >
 
-        <button id="tipos" class="nav-item nav-link "  onclick="pestana(event, 'tipo')">Tipos</button>
-        <button class="nav-item nav-link active"  onclick="pestana(event, 'nivel')">Niveles</button>
-        <button class="nav-item nav-link active"  onclick="pestana(event, 'clasificacion')">Clasificaciones</button>
-        <button class="nav-item nav-link active"  onclick="pestana(event, 'categoria')">Categorias</button>
-        <button class="nav-item nav-link active"  onclick="pestana(event, 'modalidad')">Modalidades</button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <a class="navbar-brand" href="#">Buscar por:</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a id="tipos" class="nav-link" onclick="pestana(event, 'tipo')" >Tipos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="pestana(event, 'nivel')">Nivel</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="pestana(event, 'clasificacion')">Clasificación</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="pestana(event, 'categoria')">Categoría</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="pestana(event, 'modalidad')">Modalidad</a>
+                    </li>
+                </ul>
+            </div>
     </nav>
 
     <section class="seccion_central">
