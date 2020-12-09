@@ -5,9 +5,9 @@ $(document).ready(function() {
   
     function clickbutton() {
       // simulamos el click del mouse en el boton del formulario
-      $("#tipos").click();
+      $("#todos").click();
     }
-    $('#tipos').on('click',function() {
+    $('#todos').on('click',function() {
       console.log('action button clicked');
     });
   });

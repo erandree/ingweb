@@ -59,7 +59,11 @@ $consultageneral = $conn->query($tablaproyectos);
                 <ul class="navbar-nav">
 
                     <li class="nav-item">
-                        <a id="tipos" class="nav-link" onclick="pestana(event, 'tipo')" >Tipos</a>
+                        <a id="todos" class="nav-link" onclick="pestana(event, 'todo')" >Todos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a  class="nav-link" onclick="pestana(event, 'tipo')" >Tipos</a>
                     </li>
 
                     <li class="nav-item">
@@ -83,6 +87,10 @@ $consultageneral = $conn->query($tablaproyectos);
     </nav>
 
     <section class="seccion_central">
+
+        <div id="todo" class="tabcontent">
+            <?php include 'componentes/listado/proyectos/todos.php'; ?>
+        </div>
         
         <div id="tipo" class="tabcontent">
             <?php include 'componentes/listado/proyectos/tipo.php'; ?>
