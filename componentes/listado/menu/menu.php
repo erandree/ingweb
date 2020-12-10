@@ -52,7 +52,7 @@ $consultaespecifica = $conn->query($categorias);
             }
             else
             {
-            echo "no hay datos22";
+            echo "no hay datos";
             }
         ?>
         </div>
