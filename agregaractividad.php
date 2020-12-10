@@ -96,7 +96,7 @@
             <label for="lugar" class="mensajes">Lugar:</label>
                 <input type="text" class="input__text" name="lugar" value="<?php echo $lugar; ?>">
 
-                <label for="actividad" class="mensajes">Actividad:</label>
+            <label for="actividad" class="mensajes">Actividad:</label>
                 <input type="text" name="actividad" class="input__text" value="<?php echo $actividad; ?>">
 
             <label for="horas" class="mensajes">Horas:</label>

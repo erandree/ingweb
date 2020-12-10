@@ -126,7 +126,7 @@
 
 		<div class="form-group">
 			<label for="fecha" class="mensajes">Fecha de inscripción:</label>
-			<input type="date" class="input__text" name="fecha" value="<?php if($resultado) echo $resultado['fecha']; ?>">
+				<input type="date" class="input__text" name="fecha" value="<?php if($resultado) echo $resultado['fecha']; ?>">
 
 			<label for="direccionimg" class="mensajes">Dirrecion IMG:</label>
 				<input type="text" name="direccionimg" value="<?php if($resultado) echo $resultado['direccionimg']; ?>" class="input__text">
@@ -134,15 +134,15 @@
 
 			<div class="form-group">
 				<label for="nombre" class="mensajes">Nombre:</label>
-				<input type="text" name="nombre" value="<?php if($resultado) echo $resultado['nombre']; ?>" class="input__text">
+					<input type="text" name="nombre" value="<?php if($resultado) echo $resultado['nombre']; ?>" class="input__text">
 
 				<label for="estado" class="mensajes">Estado:</label>
-				<select  class="input__text" name="estado">
-  					<option selected hidden value="<?php if($resultado) echo $resultado['estado']; ?>"><?php if($resultado) echo $resultado['estado']; ?></option>
-					  <option value="En revisión">En revisión</option>
-					  <option value="Disponible">Disponible</option>
-					  <option value="Finalizado">Finalizado</option>
-				</select>
+					<select  class="input__text" name="estado">
+  						<option selected hidden value="<?php if($resultado) echo $resultado['estado']; ?>"><?php if($resultado) echo $resultado['estado']; ?></option>
+					  	<option value="En revisión">En revisión</option>
+					  	<option value="Disponible">Disponible</option>
+					  	<option value="Finalizado">Finalizado</option>
+					</select>
 
 			</div>
 			<div class="form-group">

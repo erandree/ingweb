@@ -79,30 +79,34 @@
 			</form>
 		</div>
 		<table>
-			<tr class="head">
-				<td>Id</td>
-				<td>Cédula</td>
-				<td>Nombre</td>
-				<td>Apellido</td>
-				<td>Correo Institucional</td>
-				<td>Celular</td>
-				<td>Fecha de creación</td>
-				<td colspan="2">Acción</td>
-			</tr>
-			<?php foreach($resultado as $fila):?>
-				<tr >
-					<td><?php echo $fila['id']; ?></td>
-					<td><?php echo $fila['cedula']; ?></td>
-					<td><?php echo $fila['nombre']; ?></td>
-					<td><?php echo $fila['apellido']; ?></td>
-					<td><?php echo $fila['correoutp']; ?></td>
-					<td><?php echo $fila['celular']; ?></td>
-					<td><?php echo $fila['fecha_creacion']; ?></td>
-					<td><a href="editarparticipante.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
-					<td><a href="eliminarparticipante.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
-				</tr>
-			<?php endforeach ?>
-
+			<caption>Administración de participantes</caption>
+				<thead>
+					<tr class="head">
+						<td scope="col">Id</td>
+						<td scope="col">Cédula</td>
+						<td scope="col">Nombre</td>
+						<td scope="col">Apellido</td>
+						<td scope="col">Correo Institucional</td>
+						<td scope="col">Celular</td>
+						<td scope="col">Fecha de creación</td>
+						<td scope="col" colspan="2">Acción</td>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach($resultado as $fila):?>
+					<tr >
+						<td><?php echo $fila['id']; ?></td>
+						<td><?php echo $fila['cedula']; ?></td>
+						<td><?php echo $fila['nombre']; ?></td>
+						<td><?php echo $fila['apellido']; ?></td>
+						<td><?php echo $fila['correoutp']; ?></td>
+						<td><?php echo $fila['celular']; ?></td>
+						<td><?php echo $fila['fecha_creacion']; ?></td>
+						<td><a href="editarparticipante.php?id=<?php echo $fila['id']; ?>"  class="btn__update" >Editar</a></td>
+						<td><a href="eliminarparticipante.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a></td>
+					</tr>
+				</tbody>
+					<?php endforeach ?>
 		</table>
 	</div>
 	<?php

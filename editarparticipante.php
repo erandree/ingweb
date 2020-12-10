@@ -106,11 +106,11 @@
 		    <label for="cedula" class="mensajes">Cédula:</label>
 			    <input type="text" class="input__text" name="cedula" value="<?php if($resultado) echo $resultado['cedula']; ?>">
 
-                <label for="nombre" class="mensajes">Nombre:</label>
-			        <input type="text" class="input__text" name="nombre" value="<?php if($resultado) echo $resultado['nombre']; ?>">
+            <label for="nombre" class="mensajes">Nombre:</label>
+			    <input type="text" class="input__text" name="nombre" value="<?php if($resultado) echo $resultado['nombre']; ?>">
 
-                <label for="apellido" class="mensajes">Apellido:</label>
-			        <input type="text" class="input__text" name="apellido" value="<?php if($resultado) echo $resultado['apellido']; ?>">
+            <label for="apellido" class="mensajes">Apellido:</label>
+			    <input type="text" class="input__text" name="apellido" value="<?php if($resultado) echo $resultado['apellido']; ?>">
 				
 		</div>
 

@@ -84,21 +84,22 @@
 		<table class="table table-responsive table-striped">
 			<caption>Administración de proyectos</caption>
 			<thead>
-			<tr class="head">
-				<th>Id</th>
-				<th>Nombre</th>
-				<th>Tipo</th>
-				<th>Nivel</th>
-				<th>Clasificación</th>
-				<th>Categoría</th>
-				<th>Modalidad</th>
-				<th>Proponente</th>
-				<th>Estado</th>
-				<th colspan="5">Acción</td>
-			</tr>
+				<tr class="head">
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Tipo</th>
+					<th scope="col">Nivel</th>
+					<th scope="col">Clasificación</th>
+					<th scope="col">Categoría</th>
+					<th scope="col">Modalidad</th>
+					<th scope="col">Proponente</th>
+					<th scope="col">Estado</th>
+					<th scope="col" colspan="5">Acción</td>
+				</tr>
 			</thead>
+			<tbody>
 			<?php foreach($resultado as $fila):?>
-				<tr >
+				<tr>
 					<td><?php echo $fila['id']; ?></td>
 					<td><?php echo $fila['nombre']; ?></td>
 					<td><?php echo $fila['tipo']; ?></td>
@@ -115,7 +116,7 @@
 
 				</tr>
 			<?php endforeach ?>
-
+			</tbody>
 		</table>
 	</div>
 	    <!--Cargar el Footer-->

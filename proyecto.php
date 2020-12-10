@@ -90,7 +90,6 @@ while($fila = $proyecto->fetch_assoc()){
 						<div class="card-body">
 							<h3 class="card-title">Proyecto - <?php echo $fila['nombre'];?></h3>
 							
-                            <h4 style="text-align:center;">Generales</h4> 
 
 								<div class="form-group">
                                     <span class="subtitulos">Proponente:</span> 
@@ -154,34 +153,41 @@ while($fila = $proyecto->fetch_assoc()){
                                 <h4 style="text-align:center;">Actividades</h4> 
 
                                 <div class="form-group">
-                                    <table >
-                                        <tr class="head">
-                                            <td>#</td>
-                                            <td>Lugar</td>
-                                            <td>Actividad</td>
-                                            <td>Horas</td>
-                                        </tr>
+                                    <table class="table table-striped">
+                                        <caption>Actividades del proyecto</caption>
+			                                <thead>     
+                                                <tr class="head">
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Lugar</th>
+                                                    <th scope="col">Actividad</th>
+                                                    <th scope="col">Horas</th>
+                                                </tr>
+                                            <thead>
+                                            <tbody>
                                         <?php
-
                                             while($filaact = $actividades->fetch_assoc()){
                                         ?>
-                                            <tr>
-                                                <td><?php echo $contador + 1?></td>
-                                                <td><?php echo $filaact['lugar'];?></td>
-                                                <td><?php echo $filaact['actividad'];?></td>
-                                                <td><?php echo $filaact['horas'];?></td>
-                                            </tr>
+                                                <tr>
+                                                    <td><?php echo $contador + 1?></td>
+                                                    <td><?php echo $filaact['lugar'];?></td>
+                                                    <td><?php echo $filaact['actividad'];?></td>
+                                                    <td><?php echo $filaact['horas'];?></td>
+                                                </tr>
 
                                         <?php
                                             $totalhoras = $totalhoras + $filaact['horas'];
                                             $contador =  $contador + 1;
                                         }?>
+                                        </tbody>
+                                        <tfoot>
                                             <tr>
                                                 <td class="vacia"></td>
                                                 <td class="vacia"></td>
                                                 <td class="vacia"></td>
                                                 <td><?php echo $totalhoras;?></td>
                                             </tr>
+                                        </tfoot>
+                                        
                                     </table>
                                 </div>
 
@@ -191,26 +197,27 @@ while($fila = $proyecto->fetch_assoc()){
                                 <h4 style="text-align:center;">Participantes</h4> 
 
                                 <div class="form-group">
-                                        <table>
-                                            <tr class="head">
-                                                <td>#</td>
-                                                <td>Cédula</td>
-                                                <td>Correo</td>
-                                            </tr>
-
-                                            <?php
-                                            while($filaparticipantes = $participantes->fetch_assoc()){
-                                            ?>
-                                            
-                                                <tr>
-                                                    <td><?php echo $contador = $contador + 1?></td>
-                                                    <td><?php echo $filaparticipantes['cedula'];?></td>
-                                                    <td><?php echo $filaparticipantes['correoutp'];?></td>
+                                    <table class="table table-striped">
+                                        <caption>Participantes de proyectos</caption>
+                                            <thead>
+                                                <tr class="head">
+                                                    <td scope="col">#</td>
+                                                    <td scope="col">Cédula</td>
+                                                    <td scope="col">Correo</td>
                                                 </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                while($filaparticipantes = $participantes->fetch_assoc()){
+                                                ?>
+                                                    <tr>
+                                                        <td><?php echo $contador = $contador + 1?></td>
+                                                        <td><?php echo $filaparticipantes['cedula'];?></td>
+                                                        <td><?php echo $filaparticipantes['correoutp'];?></td>
+                                                    </tr>
 
-                                                
-
-                                            <?php  } ?>
+                                                <?php  } ?>
+                                            </tbody>
                                         </table>
                                     <?php
                                     $contador = 0;

@@ -103,7 +103,7 @@
             <label for="lugar" class="mensajes">Lugar:</label>
                 <input type="text" class="input__text" name="lugar" value="<?php echo $resultado['lugar']; ?>">
 
-                <label for="actividad" class="mensajes">Actividad:</label>
+            <label for="actividad" class="mensajes">Actividad:</label>
                 <input type="text" name="actividad" class="input__text" value="<?php echo $resultado['actividad']; ?>">
 
             <label for="horas" class="mensajes">Horas:</label>
@@ -118,7 +118,7 @@
 
         <div class="form-group">
 
-        <label for="descripcion_lugar" class="mensajes acomodar">Descripción de lugar:</label>
+            <label for="descripcion_lugar" class="mensajes acomodar">Descripción de lugar:</label>
 				<textarea type="textarea" name="descripcion_lugar"  class="input__text" value="<?php echo $resultado['descripcion_lugar']; ?>"><?php echo $resultado['descripcion_lugar']; ?></textarea>
             
 		</div>
