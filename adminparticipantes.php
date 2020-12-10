@@ -31,7 +31,8 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>SSU - Admin Participantes</title>
+	<title>Administración de participantes</title>
+	<link rel="icon" href="https://utp.ac.pa/sites/default/files/favicon.ico" type="image/vnd.microsoft.icon">
 
         <!--Carga CSS escenciales todas las páginas modificables-->
         <link rel="stylesheet" href="css/componentes_esenciales/estilos_comunes.css">

@@ -31,7 +31,8 @@ $totalhoras = 0;
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Detalles</title>
+        <title>Detalles de proyecto</title>
+        <link rel="icon" href="https://utp.ac.pa/sites/default/files/favicon.ico" type="image/vnd.microsoft.icon">
 
         <!--Carga CSS escenciales todas las páginas modificables-->
         

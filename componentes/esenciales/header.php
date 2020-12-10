@@ -12,7 +12,6 @@ session_start();
 
 ?>
 
-
 <div class="container-fluid bg-white">
 
     <div class="row">

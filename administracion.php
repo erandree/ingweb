@@ -33,12 +33,13 @@
 <html lang="es">
 	<head>
 		<meta charset="UTF-8">
-		<title>SSU - Admin Proyectos</title>
+		<title>Administración de proyectos</title>
 
 		<!--Carga CSS escenciales todas las páginas modificables-->
 		<link rel="stylesheet" href="css/componentes_esenciales/estilos_comunes.css">
         <link rel="stylesheet" href="css/componentes_esenciales/header.css">
-        <link rel="stylesheet" href="css/componentes_esenciales/footer.css">
+		<link rel="stylesheet" href="css/componentes_esenciales/footer.css">
+		<link rel="icon" href="https://utp.ac.pa/sites/default/files/favicon.ico" type="image/vnd.microsoft.icon">
 
         <!--Boostrap últimos CSS Y JavaScript-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">

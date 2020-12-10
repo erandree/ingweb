@@ -58,6 +58,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Editar Participante</title>
+	<link rel="icon" href="https://utp.ac.pa/sites/default/files/favicon.ico" type="image/vnd.microsoft.icon">
 		<!--Carga CSS escenciales todas las páginas modificables-->
 		<link rel="stylesheet" href="css/componentes_esenciales/estilos_comunes.css">
         <link rel="stylesheet" href="css/componentes_esenciales/header.css">
