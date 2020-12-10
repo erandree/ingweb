@@ -17,6 +17,7 @@
                     <?php
             }
             }
+            $consultageneral->data_seek(0);
                         ?>
                 </section>
             </div>
