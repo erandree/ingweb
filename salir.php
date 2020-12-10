@@ -1,4 +1,5 @@
 <?php
+/* Aquí cerramos la sesión en el sistema*/
 
 session_start();
 

@@ -1,5 +1,7 @@
 <?php 
 
+/* Metodo que nos eliminar una participante*/
+
 	include_once 'conexion.php';
 	if(isset($_GET['id'])){
 		$id=(int) $_GET['id'];

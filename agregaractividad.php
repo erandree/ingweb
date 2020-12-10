@@ -1,3 +1,5 @@
+<!-- método que permite agregar actividad a un proyecto-->
+
 <?php
     include_once 'conexion.php';
     
@@ -8,6 +10,7 @@
     $actividad = null;
     $horas = null;
 
+    /*-- método que permite que agregara la actividad a un proyecto */
 
     if(isset($_POST['guardar'])){
 		$lugar=$_POST['lugar'];

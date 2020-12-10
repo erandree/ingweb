@@ -1,5 +1,12 @@
+
+
 <?php
+
+/*método que nos permite ver a todos los participantes del proyecto */
+
 	include_once 'conexion.php';
+
+	/*Consulta que nos lista los participantes del proyecto */
 		$proyectoid = $_GET['id'];
 		$sentencia_select=$conn->prepare("SELECT * FROM proyectosparticipantes INNER JOIN participantes ON proyectosparticipantes.id_participante = participantes.id WHERE proyectosparticipantes.id_proyecto = '$proyectoid'");
 		$sentencia_select->execute();

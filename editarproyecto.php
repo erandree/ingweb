@@ -1,4 +1,7 @@
 <?php
+
+/*método que nos permite editar los datos de un participante */
+
 	include_once 'conexion.php';
 
 	if(isset($_GET['id'])){
@@ -13,6 +16,7 @@
 		header('Location: administracion.php');
 	}
 
+/*método que nos guardar datos de un participante */
 
 	if(isset($_POST['guardar'])){
 		$fecha=$_POST['fecha'];
@@ -72,6 +76,9 @@
 	}
 
 ?>
+
+<!-- Código HTML -->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

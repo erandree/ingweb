@@ -1,5 +1,7 @@
 <?php 
 
+/* Método que nos permite verificar los datos que ingreso el usuario en login*/
+
 if(isset($_POST['login'])){ 
 	session_start();
 

@@ -1,4 +1,8 @@
+
+
 <?php
+
+/*Consultas que permiten desplegar la información de un proyecto */
 
 include("ProbarconexionBD.php");
 

@@ -1,4 +1,5 @@
 <?php
+/* Método que nos trae toda la información del proyecto */
 
 include("ProbarconexionBD.php");
 
@@ -6,12 +7,15 @@ include("ProbarconexionBD.php");
 
 $idproyecto = $_GET["id"];
 
+/* Consulta que nos trae la información del proyecto */
 $tablaproyectos = "SELECT * FROM `proyectos` WHERE id=$idproyecto";
 $proyecto = $conn->query($tablaproyectos);
 
+/* Consulta que nos trae toda las actividades del proyecto */
 $tablaactividades = "SELECT * FROM `actividades` WHERE fk_proyecto=$idproyecto";
 $actividades = $conn->query($tablaactividades);
 
+/* Consulta que nos trae toda las partcipantes del proyecto */
 $tablapartproyecto = "SELECT * FROM `proyectosparticipantes` INNER JOIN `participantes` ON proyectosparticipantes.id_participante = participantes.id WHERE proyectosparticipantes.id_proyecto = '$idproyecto'";
 $participantes = $conn->query($tablapartproyecto);
 

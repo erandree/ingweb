@@ -1,5 +1,8 @@
+<!-- método que permite mostrar todos los participantes para administrarlos-->
+
 <?php
 	include_once 'conexion.php';
+	/* método que permite mostrar todos los participantes para administrarlos */
 
 	$sentencia_select=$conn->prepare('SELECT * FROM participantes ORDER BY id DESC');
 	$sentencia_select->execute();
@@ -26,6 +29,8 @@
 	}
 
 ?>
+
+<!-- Código HTML -->
 
 <!DOCTYPE html>
 <html lang="es">

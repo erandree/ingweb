@@ -1,6 +1,9 @@
 <?php 
 	include_once 'conexion.php';
 
+	/* Método que permite registrar un participante al sistema*/
+
+
 	$cedula = null;
 	$nombre = null;
 	$apellido = null;

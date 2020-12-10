@@ -1,14 +1,16 @@
-
+<!-- metodo que nos trae las actividades por los proyectos-->
 <?php
     include_once 'conexion.php';
-    
+	
+	/* Consulta que me trae las actividades por el proyecto seleccionado */
+
 	    $proyectoid = $_GET['id'];
 		$sentencia_select=$conn->prepare("SELECT * FROM actividades WHERE fk_proyecto = '$proyectoid'");
 		$sentencia_select->execute();
 		$resultado=$sentencia_select->fetchAll();
     
         
-	// metodo buscar
+	// metodo buscar  
 	if(isset($_POST['btn_buscar'])){
 			$buscar_text=$_POST['buscar'];
 			$select_buscar=$conn->prepare("
@@ -32,7 +34,7 @@
 	}
 
 ?>
-
+<!-- HTML -->
 <!DOCTYPE html>
 <html lang="es">
 	<head>

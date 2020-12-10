@@ -1,4 +1,6 @@
 <?php
+/* Método que nos permite registrar a los paeticipantes dentro de de un proyecto*/
+
     include_once 'conexion.php';
     
     $id = null;

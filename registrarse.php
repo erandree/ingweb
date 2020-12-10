@@ -1,4 +1,7 @@
 <?php 
+
+/* Método que nos permite registrarnos al sistema*/
+
 	include_once 'conexion.php';
 	
 	if(isset($_POST['registrarse'])){

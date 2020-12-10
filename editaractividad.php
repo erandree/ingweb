@@ -1,5 +1,6 @@
 <?php
 
+    // metodo para obetener el id de la actividad
     require 'conexion.php';
 
 	if(isset($_GET['id_actividad'])){
@@ -14,7 +15,7 @@
 		header('Location: adminparticipantes.php');
 	}
     
-
+    // metodo buscar
     if(isset($_POST['guardar'])){
 
         $lugar=$_POST['lugar'];
@@ -50,6 +51,8 @@
 
 	}
 ?>
+
+<!-- Código HTML -->
 
 <!DOCTYPE html>
 <html lang="es">

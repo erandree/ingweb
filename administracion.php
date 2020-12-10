@@ -1,5 +1,9 @@
+<!-- método que permite mostrar todos los proyectos para administrarlos-->
+
 <?php
 	include_once 'conexion.php';
+
+	/* Consulta que me trae todos los proyectos */
 
 	$sentencia_select=$conn->prepare('SELECT * FROM proyectos ORDER BY id DESC');
 	$sentencia_select->execute();
@@ -28,7 +32,7 @@
 	}
 
 ?>
-
+<!-- Código HTML -->
 <!DOCTYPE html>
 <html lang="es">
 	<head>

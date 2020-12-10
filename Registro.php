@@ -1,4 +1,7 @@
 <?php 
+
+/* Método que nos permite registrar una propuesta al sistema*/
+
 	include_once 'conexion.php';
 
 	$proponente =null;

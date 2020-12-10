@@ -1,4 +1,7 @@
+
+
 <?php
+/* Conexion a la base de datos */
 	$database="ssu";
 	$user='root';
 	$password='';

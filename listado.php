@@ -50,6 +50,7 @@ $consultageneral = $conn->query($tablaproyectos);
         include_once 'componentes/esenciales/header.php';
     ?>
 
+    <!-- Navegación de la página -->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
         <a class="navbar-brand" href="#">Buscar por:</a>
@@ -87,27 +88,43 @@ $consultageneral = $conn->query($tablaproyectos);
             </div>
     </nav>
 
+<!-- Cada metodo es llamado por el control del nav. Por default se muestra el metodo Todos al momentos de ingresar en la página -->
+<!-- Para esto se utiliza la función programada en JavaScript js/navegacion.js -->
+<!-- Ella nos ayudara con el tema de mover los metodos -->
+
     <section class="seccion_central">
+
+        <!-- Llamado al metodo que nos traera el listado de todos.php -->
 
         <div id="todo" class="tabcontent">
             <?php include 'componentes/listado/proyectos/todos.php'; ?>
         </div>
         
+        <!-- Llamado al metodo que nos traera el listado de tipo.php -->
+
         <div id="tipo2" class="tabcontent">
             <?php include 'componentes/listado/proyectos/tipo.php'; ?>
         </div>
+
+        <!-- Llamado al metodo que nos traera el listado de nivel.php -->
 
         <div id="nivel" class="tabcontent">
             <?php include 'componentes/listado/proyectos/nivel.php'; ?>
         </div>
 
+        <!-- Llamado al metodo que nos traera el listado de clasificacion.php -->
+
         <div id="clasificacion" class="tabcontent">
             <?php include 'componentes/listado/proyectos/clasificacion.php'; ?>
         </div>
 
+        <!-- Llamado al metodo que nos traera el listado de categoria.php -->
+
         <div id="categoria" class="tabcontent">
             <?php include 'componentes/listado/proyectos/categoria.php'; ?>
         </div>
+
+            <!-- Llamado al metodo que nos traera el listado de modalidad.php -->
 
         <div id="modalidad" class="tabcontent">
             <?php include 'componentes/listado/proyectos/modalidad.php'; ?>

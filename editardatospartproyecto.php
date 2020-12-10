@@ -1,13 +1,17 @@
 <?php
 
+/*metodo que nos permite editar los datos de un participante de un proyecto registrado */
+
     require 'conexion.php';
     $id_proyecto = $_GET['id_proyecto'];
     $id_participante = $_GET['id_participante'];
 
+    /*Consulta que nos trae el participante de un proyecto dado */
 	$sentencia_select=$conn->prepare("SELECT * FROM proyectosparticipantes INNER JOIN participantes ON proyectosparticipantes.id_participante = participantes.id WHERE proyectosparticipantes.id_proyecto = '$id_proyecto' AND proyectosparticipantes.id_participante = '$id_participante'");
 	$sentencia_select->execute();
     $resultado=$sentencia_select->fetchAll();
 
+    /*Consulta que nos trae el proyecto */
     $buscar_id=$conn->prepare('SELECT * FROM proyectos WHERE id=:id LIMIT 1');
     $buscar_id->execute(array(
         ':id'=>$id_proyecto
@@ -39,6 +43,8 @@
 
 	}
 ?>
+
+<!-- Código HTML -->
 
 <!DOCTYPE html>
 <html lang="es">

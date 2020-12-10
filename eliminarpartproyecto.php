@@ -1,5 +1,7 @@
 <?php 
 
+/* Metodo que nos eliminar una actividad de un proyecto dado */
+
 	include_once 'conexion.php';
 	if(isset($_GET['id'])){
         $id_participante= $_GET['id'];

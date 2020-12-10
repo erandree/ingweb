@@ -1,4 +1,9 @@
+
+
 <?php
+
+/*método que nos permite editar los datos de un participante */
+
 	include_once 'conexion.php';
 
 	if(isset($_GET['id'])){
@@ -13,6 +18,7 @@
 		header('Location: adminparticipantes.php');
 	}
 
+	//método de guardar
 
 	if(isset($_POST['guardar'])){
 		$cedula=$_POST['cedula'];
@@ -53,6 +59,9 @@
 	}
 
 ?>
+
+<!-- Código HTML -->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
