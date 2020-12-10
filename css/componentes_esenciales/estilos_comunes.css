@@ -192,6 +192,15 @@ table .head td{
     background: rgb(0, 52, 121);
 }
 
+table .head th{
+    color: #fff;
+    font-family: 'Arial',sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    background: rgb(0, 52, 121);
+}
+
 table tr td{
     border:1px solid #ccc;
     padding: 7px;

@@ -78,18 +78,21 @@
 			</form>
 		</div>
 		<table class="table table-responsive table-striped">
+			<caption>Administración de proyectos</caption>
+			<thead>
 			<tr class="head">
-				<td>Id</td>
-				<td>Nombre</td>
-				<td>Tipo</td>
-				<td>Nivel</td>
-				<td>Clasificación</td>
-				<td>Categoría</td>
-				<td>Modalidad</td>
-				<td>Proponente</td>
-				<td>Estado</td>
-				<td colspan="5">Acción</td>
+				<th>Id</th>
+				<th>Nombre</th>
+				<th>Tipo</th>
+				<th>Nivel</th>
+				<th>Clasificación</th>
+				<th>Categoría</th>
+				<th>Modalidad</th>
+				<th>Proponente</th>
+				<th>Estado</th>
+				<th colspan="5">Acción</td>
 			</tr>
+			</thead>
 			<?php foreach($resultado as $fila):?>
 				<tr >
 					<td><?php echo $fila['id']; ?></td>
