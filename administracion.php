@@ -78,7 +78,7 @@
 				value="<?php if(isset($buscar_text)) echo $buscar_text; ?>" class="input__text">
 				
 				<input type="submit" class="btn" name="btn_buscar" value="Buscar">
-				<a href="registro.php" class="btn btn__nuevo">Nuevo</a>
+				<a href="Registro.php" class="btn btn__nuevo">Nuevo</a>
 			</form>
 		</div>
 		<table class="table table-responsive table-striped">
